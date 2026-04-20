@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title> Smart E-Health Assistant</title>
+<title>Sahayam – Smart E-Health Assistant</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet"/>
 <style>
 :root{--teal:#1a9e8f;--teal-light:#2ec4b0;--teal-dark:#127a6e;--saffron:#f5a623;--saffron-light:#fdd57a;--cream:#fef9f0;--text:#1e2d2b;--text-soft:#4a6360;--card-bg:#fff;--border:#e0f0ee;--red:#e05252;--green:#2ecc71;--purple:#7c5cbf;--shadow:0 4px 24px rgba(26,158,143,.10);--shadow-lg:0 12px 40px rgba(26,158,143,.18);}
@@ -39,7 +39,6 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .welcome-text h2{font-size:23px;font-weight:900;color:#fff;}.welcome-text p{font-size:14px;color:rgba(255,255,255,.82);margin-top:5px;max-width:480px;line-height:1.6;}
 .welcome-icons{font-size:48px;flex-shrink:0;z-index:1;}
 
-/* VOICE ASSISTANT BAR */
 #vab{background:linear-gradient(135deg,#0d6e64,#1a9e8f);border-radius:18px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:var(--shadow-lg);}
 .vab-title{color:#fff;font-weight:800;font-size:15px;flex:1;min-width:140px;}.vab-title small{display:block;font-size:11px;font-weight:600;opacity:.75;margin-top:1px;}
 .vab-btn{padding:9px 18px;border-radius:50px;border:none;cursor:pointer;font-size:13px;font-weight:800;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px;transition:all .2s;}
@@ -61,7 +60,7 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .ci{font-size:40px;line-height:1;margin-bottom:9px;display:block;}.ct{font-size:15px;font-weight:800;color:var(--text);margin-bottom:4px;}.cd{font-size:12px;color:var(--text-soft);line-height:1.5;}
 .dash-card.featured{border-color:var(--saffron);background:linear-gradient(135deg,#fffbf0,#fff9e6);}
 .dash-card.featured .badge{position:absolute;top:9px;right:9px;background:var(--saffron);color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;}
-.cv{--ca:#4facfe;--cb:#00f2fe;}.cc{--ca:#43e97b;--cb:#38f9d7;}.cr{--ca:#a8edea;--cb:#fed6e3;}.ctp{--ca:#f093fb;--cb:#f5576c;}.cbmi{--ca:#4facfe;--cb:#a18cd1;}.ce{--ca:#f83600;--cb:#f9d423;}.cs{--ca:#f5a623;--cb:#f0932b;}.cm{--ca:#a18cd1;--cb:#fbc2eb;}.cdi{--ca:#84fab0;--cb:#8fd3f4;}
+.cv{--ca:#4facfe;--cb:#00f2fe;}.cc{--ca:#43e97b;--cb:#38f9d7;}.cr{--ca:#a8edea;--cb:#fed6e3;}.ctp{--ca:#f093fb;--cb:#f5576c;}.cbmi{--ca:#4facfe;--cb:#a18cd1;}.ce{--ca:#f83600;--cb:#f9d423;}.cs{--ca:#f5a623;--cb:#f0932b;}.cm{--ca:#a18cd1;--cb:#fbc2eb;}.cdi{--ca:#84fab0;--cb:#8fd3f4;}.cdrug{--ca:#fd7043;--cb:#ff8a65;}.cvit{--ca:#26c6da;--cb:#00acc1;}
 
 .panel{display:none;animation:slideUp .35s ease;background:var(--card-bg);border-radius:22px;padding:24px;box-shadow:var(--shadow-lg);border:1px solid var(--border);margin-bottom:22px;}
 .panel.active{display:block;}
@@ -83,13 +82,12 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .bo{background:transparent;border:2px solid var(--teal);color:var(--teal);}.bo:hover{background:var(--teal);color:#fff;}
 .bpu{background:linear-gradient(135deg,var(--purple),#9b59b6);color:#fff;}.bpu:hover{transform:translateY(-2px);box-shadow:0 7px 22px rgba(124,92,191,.4);}
 .bsm{padding:8px 17px;font-size:13px;}
+.bred{background:linear-gradient(135deg,#e05252,#c0392b);color:#fff;}
 
-/* SPEAK BUTTON */
 .spk{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#7c5cbf,#9b59b6);color:#fff;border:none;border-radius:28px;padding:8px 17px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px;transition:all .2s;}
 .spk:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(124,92,191,.4);}
 .spk.speaking{background:linear-gradient(135deg,#e05252,#c0392b);}
 
-/* VOICE PANEL */
 .vbig{width:148px;height:148px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--teal),var(--teal-dark));display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:48px;margin:0 auto;transition:all .25s;box-shadow:0 8px 30px rgba(26,158,143,.35);}
 .vbig.listening{background:linear-gradient(135deg,#e05252,#c0392b);animation:mpulse 1.2s infinite;}
 @keyframes mpulse{0%,100%{box-shadow:0 0 0 0 rgba(224,82,82,.6)}50%{box-shadow:0 0 0 26px rgba(224,82,82,0)}}
@@ -99,7 +97,6 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .sev.low{background:#e8f8f0;color:#27ae60;}.sev.med{background:#fef5e4;color:#e67e22;}.sev.high{background:#fde8e8;color:#e05252;}
 .sev.active,.sev:hover{border-color:currentColor;transform:scale(1.04);}
 
-/* CHAT */
 .chatbox{height:350px;overflow-y:auto;border:2px solid var(--border);border-radius:14px;padding:13px;display:flex;flex-direction:column;gap:11px;margin-bottom:12px;background:#fafffe;}
 .cmsg{display:flex;gap:8px;align-items:flex-start;}.cmsg.user{flex-direction:row-reverse;}
 .cav{width:33px;height:33px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;}
@@ -119,7 +116,6 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
 @keyframes ty{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-7px)}}
 
-/* REMEDIES */
 .rtags{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px;margin-bottom:16px;}
 .rtag{padding:11px 13px;background:var(--cream);border:2px solid var(--border);border-radius:12px;cursor:pointer;text-align:center;font-size:13px;font-weight:700;transition:all .2s;color:var(--text);}
 .rtag:hover,.rtag.active{background:var(--teal);color:#fff;border-color:var(--teal);}
@@ -127,18 +123,15 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .rbox h3{font-size:16px;font-weight:800;color:var(--teal-dark);margin-bottom:9px;}
 .rbox ul{padding-left:18px;}.rbox li{margin-bottom:6px;}
 
-/* BMI */
 .bmidisp{text-align:center;padding:24px;background:linear-gradient(135deg,var(--cream),#e8f8f5);border-radius:18px;border:2px solid var(--border);margin:16px 0;}
 .bmiN{font-size:68px;font-weight:900;color:var(--teal);line-height:1;}.bmiL{font-size:19px;font-weight:700;margin-top:5px;}
 .bmibar{height:13px;border-radius:7px;margin:16px 0;position:relative;overflow:visible;background:linear-gradient(to right,#3498db 0%,#2ecc71 30%,#f1c40f 60%,#e74c3c 100%);}
 .bmiptr{position:absolute;top:-6px;width:25px;height:25px;border-radius:50%;background:#fff;border:3px solid var(--text);transform:translateX(-50%);transition:left .5s;}
 
-/* TIPS */
 .tipcard{background:linear-gradient(135deg,var(--cream),#e8f8f5);border-radius:18px;padding:20px;border:2px solid var(--border);margin-bottom:12px;animation:slideUp .3s ease;}
 .tipcard .te{font-size:32px;margin-bottom:8px;}.tipcard h3{font-size:17px;font-weight:800;margin-bottom:6px;color:var(--teal-dark);}.tipcard p{font-size:14px;line-height:1.7;color:var(--text-soft);}
 .tipnav{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
 
-/* SAHAYAM */
 .htypes{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:20px;}
 .htbtn{padding:15px 11px;border-radius:16px;border:3px solid var(--border);background:#fff;cursor:pointer;text-align:center;transition:all .2s;font-size:13px;font-weight:700;color:var(--text);}
 .htbtn .hti{font-size:28px;display:block;margin-bottom:6px;}
@@ -150,19 +143,16 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .tabbtn{padding:8px 20px;border-radius:50px;border:none;background:transparent;font-size:13px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;color:var(--text-soft);transition:all .2s;}
 .tabbtn.active{background:var(--teal);color:#fff;}
 
-/* MENTAL */
 .moodgrid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
 .moodbtn{width:62px;height:62px;border-radius:50%;border:3px solid var(--border);background:#fff;cursor:pointer;font-size:29px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
 .moodbtn:hover,.moodbtn.active{border-color:var(--teal);transform:scale(1.14);box-shadow:0 4px 15px rgba(26,158,143,.2);}
 .mtip{background:linear-gradient(135deg,#f0e6ff,#e6f0ff);border-radius:14px;padding:18px;border:2px solid #d4b8ff;}
 .mtip h3{font-size:15px;font-weight:800;color:#7c5cbf;margin-bottom:8px;}.mtip p{font-size:14px;color:#4a3a7a;line-height:1.7;}
 
-/* DIARY */
 .dentries{max-height:290px;overflow-y:auto;}
 .dentry{background:var(--cream);border-radius:12px;padding:13px;margin-bottom:10px;border:2px solid var(--border);}
 .dentry .ddate{font-size:11px;color:var(--text-soft);font-weight:700;margin-bottom:4px;}.dentry .dtxt{font-size:14px;line-height:1.6;}.dentry .dmood{font-size:19px;float:right;}
 
-/* EMERGENCY */
 .emgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;}
 .emcon{border-radius:18px;padding:18px;text-align:center;cursor:pointer;transition:all .25s;text-decoration:none;}
 .emcon:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
@@ -170,10 +160,42 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .ep{background:linear-gradient(135deg,#3a7bd5,#00d2ff);}.ea{background:linear-gradient(135deg,#e05252,#c0392b);}.ef{background:linear-gradient(135deg,#f07d3a,#f5a623);}.ew{background:linear-gradient(135deg,#f093fb,#f5576c);}.ed{background:linear-gradient(135deg,#43e97b,#38f9d7);}
 .ed .ecn,.ed .ecnum{color:var(--text);}
 
+/* DRUG CHECKER */
+.drug-result{background:var(--cream);border-radius:15px;padding:18px;border:2px solid var(--border);margin-top:16px;font-size:14px;line-height:1.8;}
+.drug-result h3{font-size:16px;font-weight:800;color:var(--teal-dark);margin-bottom:10px;}
+.warn-box{background:#fff5f5;border:2px solid #fca5a5;border-radius:12px;padding:14px;margin-top:12px;}
+.warn-box h4{color:#dc2626;font-size:14px;font-weight:800;margin-bottom:6px;}
+.safe-box{background:#f0fdf4;border:2px solid #86efac;border-radius:12px;padding:14px;margin-top:12px;}
+.safe-box h4{color:#16a34a;font-size:14px;font-weight:800;margin-bottom:6px;}
+.drug-tag{display:inline-block;background:#e0f2fe;color:#0369a1;font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;margin:3px;}
+
+/* VITAL TRACKER */
+.vital-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:20px;}
+.vital-card{background:#fff;border:2px solid var(--border);border-radius:18px;padding:16px;text-align:center;cursor:pointer;transition:all .2s;}
+.vital-card:hover{border-color:var(--teal);transform:translateY(-3px);}
+.vital-card .vci{font-size:32px;}.vital-card .vcn{font-size:13px;font-weight:800;color:var(--text-soft);margin-top:5px;}.vital-card .vcv{font-size:26px;font-weight:900;color:var(--teal);margin-top:3px;}
+.vital-card .vcs{font-size:11px;font-weight:700;padding:3px 9px;border-radius:12px;margin-top:6px;display:inline-block;}
+.normal-s{background:#e8f8f0;color:#27ae60;}.high-s{background:#fde8e8;color:#e05252;}.low-s{background:#fff3cd;color:#856404;}
+.vital-input-row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:16px;}
+.vital-input-row .fg{flex:1;min-width:120px;margin-bottom:0;}
+.vital-history{max-height:200px;overflow-y:auto;}
+.vh-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:9px;background:var(--cream);margin-bottom:6px;font-size:13px;}
+.vh-val{font-weight:800;color:var(--teal);}.vh-date{color:var(--text-soft);font-size:11px;}
+
+/* SYMPTOM CHECKER QUICK CHIPS */
+.sym-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.sym-chip{padding:7px 14px;background:var(--cream);border:2px solid var(--border);border-radius:30px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;color:var(--text);}
+.sym-chip:hover,.sym-chip.picked{background:var(--teal);color:#fff;border-color:var(--teal);}
+
+/* AI RESPONSE CARD */
+.ai-card{background:linear-gradient(135deg,#f0fff8,#e8f8f5);border-radius:15px;padding:18px;border:2px solid var(--teal-light);margin-top:14px;}
+.ai-card h3{font-size:15px;font-weight:800;color:var(--teal-dark);margin-bottom:10px;}
+.ai-card p{font-size:14px;line-height:1.8;color:var(--text);}
+.ai-card .disclaimer{margin-top:12px;padding:9px 13px;background:rgba(245,166,35,.1);border-radius:9px;border-left:4px solid var(--saffron);font-size:12px;color:var(--text-soft);}
+
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--teal-dark);color:#fff;border-radius:50px;padding:12px 24px;font-size:14px;font-weight:700;z-index:9998;transition:all .4s;white-space:nowrap;box-shadow:0 7px 28px rgba(0,0,0,.2);}
 .toast.show{transform:translateX(-50%) translateY(0);}
 
-/* VOLUNTEER BOARD */
 .vfbtn{padding:7px 14px;border-radius:30px;border:2px solid var(--border);background:#fff;cursor:pointer;font-size:12px;font-weight:700;font-family:'Nunito',sans-serif;color:var(--text-soft);transition:all .2s;}
 .vfbtn:hover,.vfbtn.active{background:var(--teal);color:#fff;border-color:var(--teal);}
 .vol-stat{flex:1;min-width:100px;background:#fff;border-radius:14px;padding:14px 16px;border:2px solid var(--border);text-align:center;}
@@ -203,7 +225,6 @@ main{max-width:1100px;margin:0 auto;padding:22px 15px 80px;}
 .vol-empty{text-align:center;padding:48px 24px;color:var(--text-soft);}
 .vol-empty .ve-icon{font-size:56px;margin-bottom:14px;}
 .vol-empty h3{font-size:18px;font-weight:800;margin-bottom:8px;color:var(--text);}
-.vol-empty p{font-size:14px;line-height:1.7;}
 
 footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;border-top:1px solid var(--border);}
 ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--cream);}::-webkit-scrollbar-thumb{background:var(--teal-light);border-radius:5px;}
@@ -212,11 +233,10 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
 </head>
 <body>
 
-<!-- LANGUAGE SCREEN -->
 <div id="lang-screen">
   <div class="lang-logo">
     <div class="icon">🏥</div>
-    <h1>Smart</h1>
+    <h1>Sahayam</h1>
     <p>సహాయం – Community Health & Care</p>
   </div>
   <div class="lang-subtitle">Please select your language &nbsp;|&nbsp; దయచేసి మీ భాషను ఎంచుకోండి</div>
@@ -226,7 +246,6 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
   </div>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="header-left">
     <div class="header-logo">🏥</div>
@@ -251,7 +270,6 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
     <div class="welcome-icons">🤝</div>
   </div>
 
-  <!-- GLOBAL VOICE ASSISTANT BAR -->
   <div id="vab">
     <div class="vab-title">🎙️ Voice Assistant<small>Tap mic → speak any health question → AI answers aloud</small></div>
     <button class="vab-btn vab-mic" id="vab-btn" onclick="toggleVAB()">🎤 Ask by Voice</button>
@@ -259,7 +277,6 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
     <div id="vab-out"></div>
   </div>
 
-  <!-- DASHBOARD -->
   <div class="section-title" id="dtitle">🏠 Dashboard</div>
   <div class="dashboard-grid">
     <div class="dash-card cv" onclick="openPanel('voice')"><span class="ci">🎤</span><div class="ct">Speak Symptoms</div><div class="cd">Voice→AI analysis, spoken reply</div></div>
@@ -268,13 +285,13 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
     <div class="dash-card ctp" onclick="openPanel('tips')"><span class="ci">❤️</span><div class="ct">Daily Health Tips</div><div class="cd">Listen to today's wellness tip</div></div>
     <div class="dash-card cbmi" onclick="openPanel('bmi')"><span class="ci">📊</span><div class="ct">BMI Calculator</div><div class="cd">Result spoken aloud</div></div>
     <div class="dash-card ce" onclick="openPanel('emg')"><span class="ci">🚑</span><div class="ct">Emergency Help</div><div class="cd">One-tap India emergency numbers</div></div>
+    <div class="dash-card cdrug featured" onclick="openPanel('drug')"><div class="badge">🆕 NEW</div><span class="ci">💊</span><div class="ct">Drug Interaction Checker</div><div class="cd">Check if medicines are safe together</div></div>
+    <div class="dash-card cvit featured" onclick="openPanel('vital')"><div class="badge">🆕 NEW</div><span class="ci">📈</span><div class="ct">Vital Signs Tracker</div><div class="cd">Log BP, sugar, pulse with trends</div></div>
     <div class="dash-card cs featured" onclick="openPanel('sah')"><div class="badge">⭐ NEW</div><span class="ci">👴</span><div class="ct">Sahayam – Request Help</div><div class="cd">Elder community volunteer system</div></div>
     <div class="dash-card" style="--ca:#27ae60;--cb:#2ecc71;border:2px solid #27ae60;background:linear-gradient(135deg,#eafaf1,#d5f5e3);" onclick="openPanel('vol')"><div class="badge" style="background:#27ae60;">LIVE</div><span class="ci">🙋</span><div class="ct">Volunteer Board <span id="vol-badge"></span></div><div class="cd">See open help requests &amp; volunteer</div></div>
     <div class="dash-card cm" onclick="openPanel('men')"><span class="ci">🧠</span><div class="ct">Mental Health</div><div class="cd">Mood tracker, spoken support</div></div>
     <div class="dash-card cdi" onclick="openPanel('diary')"><span class="ci">📝</span><div class="ct">Health Diary</div><div class="cd">Track daily health & notes</div></div>
   </div>
-
-  <!-- ===== PANELS ===== -->
 
   <!-- VOICE SYMPTOMS -->
   <div class="panel" id="panel-voice">
@@ -284,11 +301,27 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
       <div class="vstatus" id="mstatus">Tap the mic to start speaking</div>
       <div id="whisper-stop-row" style="display:none;margin-top:12px;">
         <button class="btn bs bsm" onclick="stopSTT()" style="background:var(--red)">⏹️ Stop &amp; Transcribe</button>
-        <p style="font-size:12px;color:var(--text-soft);margin-top:5px;">Recording with Whisper AI — tap above when done speaking</p>
+        <p style="font-size:12px;color:var(--text-soft);margin-top:5px;">Recording — tap above when done speaking</p>
       </div>
     </div>
     <div id="mic-tip" style="background:#e8f8f5;border-radius:11px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:var(--teal-dark);border:1px solid var(--teal-light);">
-      💡 <strong>Voice tip:</strong> Works best in Chrome/Edge. Click 🎙️ → allow microphone → speak clearly → click ⏹️ to stop.
+      💡 <strong>Tip:</strong> Works best in Chrome/Edge. Click 🎙️ → allow microphone → speak clearly.
+    </div>
+    <!-- Quick symptom chips -->
+    <div style="margin-bottom:10px;font-size:13px;font-weight:700;">⚡ Quick select symptoms:</div>
+    <div class="sym-chips" id="symchips">
+      <span class="sym-chip" onclick="addChip(this)">Fever</span>
+      <span class="sym-chip" onclick="addChip(this)">Headache</span>
+      <span class="sym-chip" onclick="addChip(this)">Cough</span>
+      <span class="sym-chip" onclick="addChip(this)">Cold</span>
+      <span class="sym-chip" onclick="addChip(this)">Stomach pain</span>
+      <span class="sym-chip" onclick="addChip(this)">Body ache</span>
+      <span class="sym-chip" onclick="addChip(this)">Fatigue</span>
+      <span class="sym-chip" onclick="addChip(this)">Nausea</span>
+      <span class="sym-chip" onclick="addChip(this)">Dizziness</span>
+      <span class="sym-chip" onclick="addChip(this)">Back pain</span>
+      <span class="sym-chip" onclick="addChip(this)">Chest tightness</span>
+      <span class="sym-chip" onclick="addChip(this)">Sore throat</span>
     </div>
     <div style="display:flex;gap:9px;margin:13px 0;align-items:center;">
       <input type="text" id="manualtxt" placeholder="Or type symptoms here…" style="flex:1;padding:11px 15px;border:2px solid var(--border);border-radius:11px;font-size:14px;font-family:'Nunito',sans-serif;outline:none;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
@@ -311,7 +344,7 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
       <div class="cmsg ai">
         <div class="cav ai">🤖</div>
         <div class="cbub">
-          <span id="chat-welcome-text">Namaste! 🙏 I am Sahayam, your AI health assistant. Type or speak your health questions — I will reply and read my answer aloud. How can I help you today?</span>
+          <span id="chat-welcome-text">Namaste! 🙏 I am Sahayam, your AI health assistant. Ask me anything about symptoms, medicines, diet, or wellness — I give detailed helpful answers. How can I help you today?</span>
           <br><button class="bspk" onclick="speakText(document.getElementById('chat-welcome-text').textContent)">🔊 Listen</button>
         </div>
       </div>
@@ -370,6 +403,84 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
       <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-soft);margin-top:3px;"><span>Under<br>&lt;18.5</span><span>Normal<br>18.5–25</span><span>Over<br>25–30</span><span>Obese<br>&gt;30</span></div>
       <p id="bmiadvice" style="margin-top:13px;font-size:14px;line-height:1.6;color:var(--text-soft)"></p>
     </div>
+  </div>
+
+  <!-- DRUG INTERACTION CHECKER (NEW) -->
+  <div class="panel" id="panel-drug">
+    <div class="ph"><div class="pi">💊</div><div><h2>Drug Interaction Checker</h2><p>Check if two or more medicines are safe to take together</p></div><button class="cpanel" onclick="closePanel('drug')">✕</button></div>
+    <div style="background:#fff3cd;border:2px solid #ffc107;border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:13px;">
+      ⚠️ <strong>Important:</strong> This is AI-based guidance only. Always confirm with your pharmacist or doctor before combining medicines.
+    </div>
+    <div class="fg">
+      <label>💊 Medicine 1 (name or generic name)</label>
+      <input type="text" id="drug1" placeholder="e.g. Metformin, Paracetamol, Aspirin…"/>
+    </div>
+    <div class="fg">
+      <label>💊 Medicine 2</label>
+      <input type="text" id="drug2" placeholder="e.g. Ibuprofen, Atorvastatin, Amlodipine…"/>
+    </div>
+    <div class="fg">
+      <label>💊 Medicine 3 (optional)</label>
+      <input type="text" id="drug3" placeholder="Optional third medicine…"/>
+    </div>
+    <div class="fg">
+      <label>🧑 Patient age & conditions (optional)</label>
+      <input type="text" id="drugctx" placeholder="e.g. 65 years, diabetic, kidney disease…"/>
+    </div>
+    <button class="btn bp" onclick="checkDrugs()">🔍 Check Interactions</button>
+    <div id="drug-result"></div>
+  </div>
+
+  <!-- VITAL SIGNS TRACKER (NEW) -->
+  <div class="panel" id="panel-vital">
+    <div class="ph"><div class="pi">📈</div><div><h2>Vital Signs Tracker</h2><p>Log & monitor your daily health readings</p></div><button class="cpanel" onclick="closePanel('vital')">✕</button></div>
+
+    <div class="vital-grid" id="vital-summary">
+      <!-- Filled by JS -->
+    </div>
+
+    <div class="tabsw">
+      <button class="tabbtn active" onclick="vitalTab('bp',this)">🩸 Blood Pressure</button>
+      <button class="tabbtn" onclick="vitalTab('sugar',this)">🍬 Blood Sugar</button>
+      <button class="tabbtn" onclick="vitalTab('pulse',this)">💓 Pulse</button>
+      <button class="tabbtn" onclick="vitalTab('weight',this)">⚖️ Weight</button>
+    </div>
+
+    <div id="vital-bp-form">
+      <div class="vital-input-row">
+        <div class="fg"><label>Systolic (mmHg)</label><input type="number" id="v-sys" placeholder="e.g. 120"/></div>
+        <div class="fg"><label>Diastolic (mmHg)</label><input type="number" id="v-dia" placeholder="e.g. 80"/></div>
+        <button class="btn bp bsm" style="margin-bottom:0;align-self:flex-end;" onclick="logVital('bp')">+ Log</button>
+      </div>
+      <div class="vital-history" id="vh-bp"></div>
+    </div>
+    <div id="vital-sugar-form" style="display:none">
+      <div class="vital-input-row">
+        <div class="fg"><label>Blood Sugar (mg/dL)</label><input type="number" id="v-sug" placeholder="e.g. 110"/></div>
+        <div class="fg"><label>When?</label><select id="v-sug-when"><option>Fasting</option><option>Post-meal (2hr)</option><option>Random</option></select></div>
+        <button class="btn bp bsm" style="margin-bottom:0;align-self:flex-end;" onclick="logVital('sugar')">+ Log</button>
+      </div>
+      <div class="vital-history" id="vh-sugar"></div>
+    </div>
+    <div id="vital-pulse-form" style="display:none">
+      <div class="vital-input-row">
+        <div class="fg"><label>Pulse (bpm)</label><input type="number" id="v-pulse" placeholder="e.g. 72"/></div>
+        <button class="btn bp bsm" style="margin-bottom:0;align-self:flex-end;" onclick="logVital('pulse')">+ Log</button>
+      </div>
+      <div class="vital-history" id="vh-pulse"></div>
+    </div>
+    <div id="vital-weight-form" style="display:none">
+      <div class="vital-input-row">
+        <div class="fg"><label>Weight (kg)</label><input type="number" id="v-wt" placeholder="e.g. 68"/></div>
+        <button class="btn bp bsm" style="margin-bottom:0;align-self:flex-end;" onclick="logVital('weight')">+ Log</button>
+      </div>
+      <div class="vital-history" id="vh-weight"></div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <button class="btn bo bsm" onclick="analyzeVitals()">🤖 AI Analyze My Readings</button>
+    </div>
+    <div id="vital-ai-result"></div>
   </div>
 
   <!-- EMERGENCY -->
@@ -477,44 +588,22 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
 
   <!-- VOLUNTEER BOARD PANEL -->
   <div class="panel" id="panel-vol">
-    <div class="ph">
-      <div class="pi">🙋</div>
-      <div>
-        <h2>Volunteer Board</h2>
-        <p>Open help requests from your community — call &amp; volunteer</p>
-      </div>
-      <button class="cpanel" onclick="closePanel('vol')">✕</button>
-    </div>
-
-    <!-- Stats bar -->
+    <div class="ph"><div class="pi">🙋</div><div><h2>Volunteer Board</h2><p>Open help requests from your community</p></div><button class="cpanel" onclick="closePanel('vol')">✕</button></div>
     <div id="vol-stats" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;"></div>
-
-    <!-- Filter bar -->
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;align-items:center;">
       <span style="font-size:13px;font-weight:700;color:var(--text-soft);">Filter:</span>
       <button class="vfbtn active" onclick="filterVol('all',this)">🌐 All</button>
       <button class="vfbtn" onclick="filterVol('Medicine Pickup',this)">💊 Medicine</button>
       <button class="vfbtn" onclick="filterVol('Grocery Shopping',this)">🛒 Grocery</button>
       <button class="vfbtn" onclick="filterVol('Hospital Visit',this)">🏥 Hospital</button>
-      <button class="vfbtn" onclick="filterVol('Walking Assistance',this)">🚶 Walking</button>
       <button class="vfbtn" onclick="filterVol('Emergency Help',this)">🚑 Emergency</button>
-      <button class="vfbtn" onclick="filterVol('Talking Companion',this)">☎️ Companion</button>
     </div>
-
     <div id="vol-list"></div>
-
     <div style="margin-top:22px;background:linear-gradient(135deg,#eafaf1,#d5f5e3);border-radius:14px;padding:18px;border:2px solid #a9dfbf;">
       <h3 style="font-size:16px;font-weight:800;color:#1a7a4a;margin-bottom:10px;">💚 How to Volunteer</h3>
-      <p style="font-size:14px;color:#1a5c38;line-height:1.8;">
-        1️⃣ Browse the requests above<br>
-        2️⃣ Tap <strong>📞 Call</strong> to contact the person directly<br>
-        3️⃣ Confirm you can help and coordinate the time<br>
-        4️⃣ Mark as <strong>✅ Done</strong> once help is provided<br>
-        5️⃣ Your act of kindness matters — <em>Sahayam means Help!</em> 🙏
-      </p>
+      <p style="font-size:14px;color:#1a5c38;line-height:1.8;">1️⃣ Browse requests above<br>2️⃣ Tap 📞 Call to contact the person<br>3️⃣ Confirm you can help and arrange timing<br>4️⃣ Mark ✅ Done once help is given<br>5️⃣ Sahayam means Help — thank you! 🙏</p>
     </div>
   </div>
-
 </main>
 
 <div class="toast" id="toast"></div>
@@ -524,850 +613,737 @@ footer{text-align:center;padding:16px;color:var(--text-soft);font-size:12px;bord
 </footer>
 
 <script>
-/*=====================================================================
-  SAHAYAM – Full Voice Integration
-  STT  : Web Speech API  (browser native – Chrome/Edge)
-  TTS  : 1st try → Pollinations AI /v1/audio/speech (openai-audio model)
-          2nd try → Browser SpeechSynthesis API (fallback)
-  AI   : 1st try → Pollinations text.pollinations.ai (free, no key)
-          2nd try → Anthropic claude-sonnet API
-=====================================================================*/
+/*==========================================================
+  SAHAYAM — FIXED AI ENGINE
+  All AI calls go through Anthropic API (works in this env)
+  with DETAILED system prompts so answers are never "just consult doctor"
+==========================================================*/
 
 let lang = 'en';
 let bmiAdvice = '';
 let menTipText = '';
 
-/* ================================================================
-   TTS ENGINE
-   Telugu  → Pollinations AI TTS (gpt-4o-mini-tts, supports Telugu)
-   English → Browser SpeechSynthesis (fast, no API needed)
-   Fallback→ Browser SpeechSynthesis for any Telugu API failure
-================================================================ */
+/* ==================== TTS ==================== */
 let ttsQueue = [], ttsKeepAlive = null, ttsAudio = null;
 
 async function speakText(txt) {
-  if(!txt || !txt.trim()) return;
+  if (!txt || !txt.trim()) return;
   stopSpeak();
-
   const clean = txt.replace(/[*_#~`]/g,'').replace(/\s+/g,' ').trim();
   showTTSInd(true);
-
-  if(lang === 'te') {
-    // Telugu: use Pollinations AI TTS which supports Indic languages
-    await speakTelugu(clean);
-  } else {
-    // English: fast browser TTS
-    speakEnglish(clean);
-  }
+  speakEnglish(clean, lang === 'te' ? 'te-IN' : 'en-IN');
 }
 
-/* ---- Telugu via Pollinations AI TTS ---- */
-async function speakTelugu(txt) {
-  // Pollinations uses OpenAI-compatible audio endpoint — supports multilingual
-  const VOICES = ['shimmer','nova','alloy','echo','fable','onyx'];
-  // shimmer handles Telugu script best
-  try {
-    const resp = await fetch('https://api.pollinations.ai/v1/audio/speech', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'openai-audio',
-        input: txt,
-        voice: 'shimmer',
-        response_format: 'mp3'
-      })
-    });
-    if(resp.ok) {
-      const blob = await resp.blob();
-      const url = URL.createObjectURL(blob);
-      ttsAudio = new Audio(url);
-      ttsAudio.onended = () => { showTTSInd(false); URL.revokeObjectURL(url); };
-      ttsAudio.onerror = () => { showTTSInd(false); speakEnglish(txt); }; // fallback
-      ttsAudio.play();
-      return;
-    }
-  } catch(e) { console.warn('Pollinations TTS failed, using browser fallback', e); }
-
-  // Fallback: browser TTS for Telugu (works on Android which has Telugu voices)
-  speakEnglish(txt, 'te-IN');
-}
-
-/* ---- English via Browser SpeechSynthesis ---- */
 function speakEnglish(txt, forceLang) {
-  if(!('speechSynthesis' in window)) { showTTSInd(false); return; }
-
-  // Split into sentences so Chrome does not cut off after 15s
+  if (!('speechSynthesis' in window)) { showTTSInd(false); return; }
   ttsQueue = (txt.match(/[^.!?।]+[.!?।]*/g) || [txt]).filter(s => s.trim());
-
   const speakChunk = () => {
-    if(!ttsQueue.length) { showTTSInd(false); clearInterval(ttsKeepAlive); return; }
+    if (!ttsQueue.length) { showTTSInd(false); clearInterval(ttsKeepAlive); return; }
     const u = new SpeechSynthesisUtterance(ttsQueue.shift().trim());
     u.lang = forceLang || 'en-IN';
     u.rate = 0.88; u.pitch = 1.0; u.volume = 1.0;
-
     const voices = window.speechSynthesis.getVoices();
-    const picked = voices.find(v => v.lang === (forceLang||'en-IN'))
-      || voices.find(v => v.lang.startsWith(forceLang ? forceLang.split('-')[0] : 'en'))
+    const picked = voices.find(v => v.lang === (forceLang || 'en-IN'))
+      || voices.find(v => v.lang.startsWith((forceLang || 'en-IN').split('-')[0]))
       || voices.find(v => v.lang.startsWith('en'))
       || voices[0];
-    if(picked) u.voice = picked;
-
+    if (picked) u.voice = picked;
     u.onend = speakChunk;
-    u.onerror = speakChunk; // skip errored sentence
+    u.onerror = speakChunk;
     window.speechSynthesis.speak(u);
   };
-
   speakChunk();
-
-  // Chrome keepalive
   ttsKeepAlive = setInterval(() => {
-    if(window.speechSynthesis.speaking) {
-      window.speechSynthesis.pause();
-      window.speechSynthesis.resume();
-    }
+    if (window.speechSynthesis.speaking) { window.speechSynthesis.pause(); window.speechSynthesis.resume(); }
   }, 10000);
 }
 
 function stopSpeak() {
   clearInterval(ttsKeepAlive);
   ttsQueue = [];
-  if(ttsAudio) { ttsAudio.pause(); ttsAudio = null; }
-  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+  if (ttsAudio) { ttsAudio.pause(); ttsAudio = null; }
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
   showTTSInd(false);
 }
-
 function showTTSInd(on) {
   const el = document.getElementById('tts-indicator');
-  if(el) on ? el.classList.add('active') : el.classList.remove('active');
+  if (el) on ? el.classList.add('active') : el.classList.remove('active');
 }
 
-/* ---------- AI ---------- */
-async function getAI(prompt){
-  // System prompt switches language based on user selection
-  const sys = lang === 'te'
-    ? 'మీరు సహాయం అనే AI ఆరోగ్య సహాయకుడు. తెలుగులో మాత్రమే జవాబు ఇవ్వండి. సాధారణ తెలుగు పదాలు వాడండి. 80 పదాలలోపు ఉండండి. డాక్టర్‌ని సంప్రదించమని చెప్పండి.'
-    : 'You are Sahayam, a caring AI health assistant for Indian users. Respond in plain text only, no markdown. Be warm, simple, under 100 words. Always advise consulting a doctor for serious issues.';
+/* ==================== AI ENGINE ====================
+   Uses Pollinations AI — 100% free, no API key needed.
+   Text: https://text.pollinations.ai/openai  (OpenAI-compatible)
+   STT:  https://api.pollinations.ai/v1/audio/transcriptions (Whisper)
+*/
+async function getAI(prompt, systemOverride) {
+  const sys = systemOverride || (lang === 'te'
+    ? `మీరు సహాయం అనే అనుభవజ్ఞుడైన AI ఆరోగ్య సహాయకుడు. సాధారణ, వివరణాత్మక తెలుగు సమాధానాలు ఇవ్వండి. 
+       లక్షణాలకు సంభావ్య కారణాలు, ఇంటి చికిత్సలు, మరియు ఎప్పుడు డాక్టర్ దగ్గరకు వెళ్ళాలో చెప్పండి. 
+       120 పదాలలోపు, స్పష్టంగా మాట్లాడండి.`
+    : `You are Sahayam, an experienced AI health assistant for Indian users (Hyderabad/Telangana region).
+       CRITICAL RULES:
+       - Give DETAILED, SPECIFIC, HELPFUL answers. Never just say "consult a doctor" as your main answer.
+       - For symptoms: explain likely causes, home care steps, when to see a doctor, what medicines are commonly used.
+       - For diet/lifestyle questions: give concrete, actionable Indian-context advice (foods, habits, timings).
+       - For medicine questions: explain what it's for, common side effects, how to take it.
+       - Always include 2-3 practical self-care tips.
+       - End with: "See a doctor if symptoms worsen or persist beyond 3 days." (only at the end, not as the main answer)
+       - Plain text only, no markdown. Under 150 words. Be warm and conversational.`);
 
-  // Try Pollinations text first (free, no key)
-  try{
-    const fullPrompt = sys + '\n\nUser: ' + prompt + '\nSahayam:';
-    const enc = encodeURIComponent(fullPrompt);
-    const r = await fetch('https://text.pollinations.ai/' + enc, {signal: AbortSignal.timeout(8000)});
-    if(r.ok){
-      const t = await r.text();
-      if(t && t.length > 10) return t.trim();
-    }
-  }catch(e){ console.warn('Pollinations AI failed:', e.message); }
-
-  // Fallback: Anthropic API
-  try{
-    const r = await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514', max_tokens:300,
-        system: sys,
-        messages:[{role:'user', content: prompt}]
+  // Try Pollinations text AI (free, no API key)
+  try {
+    const r = await fetch('https://text.pollinations.ai/openai', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'openai',
+        max_tokens: 400,
+        messages: [
+          { role: 'system', content: sys },
+          { role: 'user', content: prompt }
+        ]
       })
     });
     const d = await r.json();
-    const t = d.content?.[0]?.text;
-    if(t) return t.trim();
-  }catch(e){ console.warn('Anthropic API failed:', e.message); }
+    const t = d.choices?.[0]?.message?.content;
+    if (t && t.trim().length > 10) return t.trim();
+  } catch (e) {
+    console.warn('Pollinations AI error:', e);
+  }
 
+  // Offline fallback
   return lang === 'te'
-    ? 'నేను మీ ఆరోగ్య ప్రశ్నలకు సహాయం చేయడానికి ఇక్కడ ఉన్నాను. అత్యవసర పరిస్థితిలో 108 కి కాల్ చేయండి.'
-    : 'I am here to help with your health questions. Please consult a qualified doctor. For emergencies call 108.';
+    ? 'ప్రస్తుతం AI అందుబాటులో లేదు. దయచేసి మళ్ళీ ప్రయత్నించండి. అత్యవసర పరిస్థితిలో 108 కి కాల్ చేయండి.'
+    : 'AI is temporarily unavailable. Please check your internet connection and try again. For emergencies call 108.';
 }
 
-/* Telugu spoken messages helper */
 function T(en, te) { return lang === 'te' ? te : en; }
 
-/* ---------- LANGUAGE ---------- */
-const TR={
-  'hdr-title':{en:'Sahayam – AI E-Health Assistant',te:'సహాయం – AI ఆరోగ్య సహాయకుడు'},
-  'hdr-sub':{en:'Community Health & Elder Support',te:'సమాజ ఆరోగ్యం & వృద్ధుల మద్దతు'},
-  'wh':{en:'Welcome to Sahayam 🙏',te:'సహాయానికి స్వాగతం 🙏'},
-  'wp':{en:'Voice-powered AI health assistant. Speak your symptoms — AI answers aloud.',te:'వాయిస్ AI ఆరోగ్య సహాయకుడు. లక్షణాలు చెప్పండి — AI జవాబులు.'},
-  'dtitle':{en:'🏠 Dashboard',te:'🏠 డాష్‌బోర్డ్'},
+/* ==================== LANGUAGE ==================== */
+const TR = {
+  'hdr-title': { en: 'Sahayam – AI E-Health Assistant', te: 'సహాయం – AI ఆరోగ్య సహాయకుడు' },
+  'hdr-sub': { en: 'Community Health & Elder Support', te: 'సమాజ ఆరోగ్యం & వృద్ధుల మద్దతు' },
+  'wh': { en: 'Welcome to Sahayam 🙏', te: 'సహాయానికి స్వాగతం 🙏' },
+  'wp': { en: 'Voice-powered AI health assistant. Speak your symptoms — AI answers aloud.', te: 'వాయిస్ AI ఆరోగ్య సహాయకుడు. లక్షణాలు చెప్పండి — AI జవాబులు.' },
+  'dtitle': { en: '🏠 Dashboard', te: '🏠 డాష్‌బోర్డ్' },
 };
-function setLang(l){
-  lang=l;
+function setLang(l) {
+  lang = l;
   document.getElementById('lang-screen').classList.add('hidden');
-  document.getElementById('ltbtn').textContent=l==='en'?'తెలుగు':'English';
+  document.getElementById('ltbtn').textContent = l === 'en' ? 'తెలుగు' : 'English';
   applyTR();
-  const g=T('Welcome to Sahayam. Your AI health assistant is ready. Tap any card to begin.','సహాయానికి స్వాగతం. మీ AI ఆరోగ్య సహాయకుడు సిద్ధంగా ఉన్నాడు.');
-  // Update chat welcome message language
+  const g = T('Welcome to Sahayam. Your AI health assistant is ready. Tap any card to begin.',
+              'సహాయానికి స్వాగతం. మీ AI ఆరోగ్య సహాయకుడు సిద్ధంగా ఉన్నాడు.');
   const cwel = document.getElementById('chat-welcome-text');
-  if(cwel) cwel.textContent = T(
-    'Namaste! 🙏 I am Sahayam, your AI health assistant. Type or speak your health questions — I will reply and read my answer aloud. How can I help you today?',
-    'నమస్తే! 🙏 నేను సహాయం, మీ AI ఆరోగ్య సహాయకుడు. మీ ఆరోగ్య ప్రశ్నలు తెలుగులో అడగండి — నేను తెలుగులో జవాబు ఇస్తాను మరియు బిగ్గరగా చదువుతాను.'
+  if (cwel) cwel.textContent = T(
+    'Namaste! 🙏 I am Sahayam, your AI health assistant. Ask me anything about symptoms, medicines, diet, or wellness — I give detailed helpful answers.',
+    'నమస్తే! 🙏 నేను సహాయం. ఆరోగ్య ప్రశ్నలు తెలుగులో అడగండి — నేను వివరంగా జవాబు ఇస్తాను.'
   );
-  setTimeout(()=>speakText(g),700);
+  setTimeout(() => speakText(g), 700);
 }
-function toggleLang(){
-  lang=lang==='en'?'te':'en';
-  document.getElementById('ltbtn').textContent=lang==='en'?'తెలుగు':'English';
+function toggleLang() {
+  lang = lang === 'en' ? 'te' : 'en';
+  document.getElementById('ltbtn').textContent = lang === 'en' ? 'తెలుగు' : 'English';
   applyTR();
 }
-function applyTR(){
-  Object.keys(TR).forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=TR[id][lang];});
+function applyTR() {
+  Object.keys(TR).forEach(id => { const el = document.getElementById(id); if (el) el.textContent = TR[id][lang]; });
 }
 
-/* ---------- PANELS ---------- */
-/* openPanel defined below in volunteer section */
-function closePanel(id){
-  const p=document.getElementById('panel-'+id);
-  if(p) p.classList.remove('active');
+/* ==================== PANELS ==================== */
+function openPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  const p = document.getElementById('panel-' + id);
+  if (p) { p.classList.add('active'); p.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  if (id === 'tips') showTip();
+  if (id === 'diary') loadD();
+  if (id === 'sah') renderBoard();
+  if (id === 'vol') renderVolBoard();
+  if (id === 'vital') { renderVitalSummary(); loadVitalHistory('bp'); }
+}
+function closePanel(id) {
+  const p = document.getElementById('panel-' + id);
+  if (p) p.classList.remove('active');
 }
 
-/* ================================================================
-   STT ENGINE
-   Layer 1: Web Speech API  (Chrome/Edge, needs HTTPS or localhost)
-   Layer 2: MediaRecorder → Pollinations Whisper STT  (all browsers)
-   Layer 3: Pure text fallback (always works)
-================================================================ */
-let rec=null, isL=false, sttMode='';
-let mediaRec=null, audioChunks=[], micStream=null;
+/* ==================== STT ==================== */
+let rec = null, isL = false, sttMode = '';
+let mediaRec = null, audioChunks = [], micStream = null;
 
-/* Check if Web Speech API is truly available */
-const hasSpeechAPI = (()=>{
-  try { return !!(window.SpeechRecognition||window.webkitSpeechRecognition); }
-  catch(e){ return false; }
+const hasSpeechAPI = (() => {
+  try { return !!(window.SpeechRecognition || window.webkitSpeechRecognition); } catch (e) { return false; }
 })();
 
-/* Request mic permission up front */
-async function requestMic(){
-  try {
-    micStream = await navigator.mediaDevices.getUserMedia({audio:true});
-    return true;
-  } catch(e) {
-    return false;
-  }
+async function requestMic() {
+  try { micStream = await navigator.mediaDevices.getUserMedia({ audio: true }); return true; }
+  catch (e) { return false; }
 }
 
-/* ----- Web Speech API recorder ----- */
-function mkWebSpeech(onInterim, onFinal, onError){
-  const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
+function mkWebSpeech(onInterim, onError) {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   const r = new SR();
-  r.lang = lang==='te' ? 'te-IN' : 'en-IN';
-  r.continuous = true;
-  r.interimResults = true;
-  r.maxAlternatives = 1;
+  r.lang = lang === 'te' ? 'te-IN' : 'en-IN';
+  r.continuous = true; r.interimResults = true; r.maxAlternatives = 1;
   r.onresult = e => {
-    let interim='', final='';
-    for(let i=e.resultIndex;i<e.results.length;i++){
-      if(e.results[i].isFinal) final += e.results[i][0].transcript;
+    let interim = '', final = '';
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      if (e.results[i].isFinal) final += e.results[i][0].transcript;
       else interim += e.results[i][0].transcript;
     }
-    if(interim||final) onInterim(interim||final, !!final);
+    if (interim || final) onInterim(interim || final, !!final);
   };
-  r.onerror = ev => {
-    console.warn('SpeechRecognition error:', ev.error);
-    if(ev.error==='not-allowed'||ev.error==='service-not-allowed') onError('permission');
-    else if(ev.error==='network') onError('network');
-    else onError(ev.error);
-  };
-  r.onend = () => { if(isL) { try{r.start();}catch(e){} } }; // keep alive
+  r.onerror = ev => { console.warn('SpeechRecognition error:', ev.error); onError(ev.error); };
+  r.onend = () => { if (isL) { try { r.start(); } catch (e) {} } };
   return r;
 }
 
-/* ----- MediaRecorder → Pollinations Whisper ----- */
-async function startWhisperRec(onTranscript, onStatus){
-  const ok = await requestMic();
-  if(!ok){ onTranscript(null,'mic-denied'); return null; }
-  audioChunks=[];
-  const mr = new MediaRecorder(micStream);
-  mr.ondataavailable = e => { if(e.data.size>0) audioChunks.push(e.data); };
-  mr.onstop = async () => {
-    onStatus('transcribing');
-    const blob = new Blob(audioChunks,{type:'audio/webm'});
-    try {
-      const fd = new FormData();
-      fd.append('file', blob, 'audio.webm');
-      fd.append('model','whisper-1');
-      // Pollinations Whisper endpoint
-      const r = await fetch('https://api.pollinations.ai/v1/audio/transcriptions',{method:'POST',body:fd});
-      if(r.ok){
-        const d = await r.json();
-        onTranscript(d.text||'','ok');
-      } else { onTranscript(null,'api-error'); }
-    } catch(e){ onTranscript(null,'api-error'); }
-  };
-  mr.start(200);
-  return mr;
-}
-
-/* ----- Unified STT start ----- */
-async function startSTT(mode, onText, onStatus){
-  stopSTT();
-  isL=true; sttMode=mode;
-
-  if(hasSpeechAPI){
-    // Try Web Speech first
+async function startSTT(mode, onText, onStatus) {
+  stopSTT(); isL = true; sttMode = mode;
+  if (hasSpeechAPI) {
     try {
       rec = mkWebSpeech(
         (txt, isFinal) => { onText(txt, isFinal); },
-        () => {},
-        async (err) => {
-          console.warn('WebSpeech failed with:', err, '— falling back to Whisper');
-          rec=null;
-          // fall through to Whisper
-          await startWhisperFallback(mode, onText, onStatus);
-        }
+        async (err) => { rec = null; await startWhisperFallback(mode, onText, onStatus); }
       );
-      rec.start();
-      onStatus('listening-webspeech');
-      return;
-    } catch(e){
-      console.warn('WebSpeech start failed:', e);
-    }
+      rec.start(); onStatus('listening-webspeech'); return;
+    } catch (e) { /* fall through */ }
   }
-
-  // Go straight to Whisper
   await startWhisperFallback(mode, onText, onStatus);
 }
 
-async function startWhisperFallback(mode, onText, onStatus){
+async function startWhisperFallback(mode, onText, onStatus) {
   onStatus('requesting-mic');
   const ok = await requestMic();
-  if(!ok){
-    isL=false;
-    onStatus('mic-denied');
-    return;
-  }
+  if (!ok) { isL = false; onStatus('mic-denied'); return; }
   onStatus('listening-whisper');
-  audioChunks=[];
+  audioChunks = [];
   mediaRec = new MediaRecorder(micStream);
-  mediaRec.ondataavailable = e => { if(e.data.size>0) audioChunks.push(e.data); };
+  mediaRec.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
   mediaRec.onstop = async () => {
-    if(!isL && audioChunks.length===0) return;
-    const capturedMode = sttMode; // capture before reset
+    if (!isL && audioChunks.length === 0) return;
+    const capturedMode = sttMode;
     onStatus('transcribing');
-    const blob = new Blob(audioChunks,{type:'audio/webm'});
+    const blob = new Blob(audioChunks, { type: 'audio/webm' });
     try {
       const fd = new FormData();
       fd.append('file', blob, 'audio.webm');
-      const r = await fetch('https://api.pollinations.ai/v1/audio/transcriptions',{method:'POST',body:fd});
-      if(r.ok){
+      const r = await fetch('https://api.pollinations.ai/v1/audio/transcriptions', { method: 'POST', body: fd });
+      if (r.ok) {
         const d = await r.json();
-        const txt = (d.text||'').trim();
-        onText(txt, true);
-        onStatus('done');
-        // Route to action based on mode
-        if(capturedMode==='vab' && txt) { isL=false; handleVAB(txt); }
-        if(capturedMode==='chat' && txt) { document.getElementById('chatinput').value=txt; setTimeout(sendChat,300); }
+        const txt = (d.text || '').trim();
+        onText(txt, true); onStatus('done');
+        if (capturedMode === 'vab' && txt) { isL = false; handleVAB(txt); }
+        if (capturedMode === 'chat' && txt) { document.getElementById('chatinput').value = txt; setTimeout(sendChat, 300); }
       } else { onStatus('api-error'); }
-    } catch(e){ onStatus('api-error'); }
-    isL=false;
+    } catch (e) { onStatus('api-error'); }
+    isL = false;
   };
   mediaRec.start();
 }
 
-function stopSTT(){
-  isL=false;
-  if(rec){ try{rec.stop();}catch(e){} rec=null; }
-  if(mediaRec && mediaRec.state!=='inactive'){ try{mediaRec.stop();}catch(e){} }
-  mediaRec=null;
+function stopSTT() {
+  isL = false;
+  if (rec) { try { rec.stop(); } catch (e) {} rec = null; }
+  if (mediaRec && mediaRec.state !== 'inactive') { try { mediaRec.stop(); } catch (e) {} }
+  mediaRec = null;
   updMic(); updCMic(false); updVABbtn(false);
 }
 
-/* ---- Voice Symptoms Panel ---- */
-async function toggleMic(){
-  if(isL && sttMode==='voice'){ stopSTT(); return; }
-  stopSTT(); sttMode='voice';
+/* ==================== VOICE SYMPTOMS ==================== */
+function addChip(el) {
+  el.classList.toggle('picked');
+  const picked = [...document.querySelectorAll('.sym-chip.picked')].map(c => c.textContent).join(', ');
+  if (picked) document.getElementById('vtx').textContent = picked;
+}
+
+async function toggleMic() {
+  if (isL && sttMode === 'voice') { stopSTT(); return; }
+  stopSTT(); sttMode = 'voice';
   const statusEl = document.getElementById('mstatus');
   const txEl = document.getElementById('vtx');
-
   await startSTT('voice',
-    (txt, final) => {
-      txEl.textContent = txt;
-      txEl.style.borderColor = 'var(--teal)';
-      if(final && sttMode==='voice' && hasSpeechAPI){
-        // for webspeech keep going; user stops manually
-      }
-    },
+    (txt, final) => { txEl.textContent = txt; txEl.style.borderColor = 'var(--teal)'; },
     (status) => {
-      if(status==='listening-webspeech'){ isL=true; updMic('🔴 Listening via browser… speak now'); }
-      else if(status==='requesting-mic'){ statusEl.textContent='🔐 Requesting microphone…'; }
-      else if(status==='listening-whisper'){ isL=true; updMic('🔴 Recording… tap Stop when done'); }
-      else if(status==='transcribing'){ statusEl.textContent='⏳ Transcribing your speech…'; }
-      else if(status==='done'){ isL=false; updMic(); }
-      else if(status==='mic-denied'){
-        isL=false; updMic();
-        txEl.style.borderColor='var(--red)';
-        statusEl.textContent='🚫 Mic blocked. Allow mic in browser settings, or type below.';
-        showToast('🎙️ Please allow microphone access in your browser');
-      }
-      else if(status==='api-error'){
-        isL=false; updMic();
-        statusEl.textContent='⚠️ Transcription failed. Please type your symptoms below.';
-      }
+      if (status === 'listening-webspeech') { isL = true; updMic('🔴 Listening… speak now'); }
+      else if (status === 'requesting-mic') { statusEl.textContent = '🔐 Requesting microphone…'; }
+      else if (status === 'listening-whisper') { isL = true; updMic('🔴 Recording… tap Stop when done'); }
+      else if (status === 'transcribing') { statusEl.textContent = '⏳ Transcribing…'; }
+      else if (status === 'done') { isL = false; updMic(); }
+      else if (status === 'mic-denied') { isL = false; updMic(); statusEl.textContent = '🚫 Allow mic in browser settings, or type below.'; }
+      else if (status === 'api-error') { isL = false; updMic(); statusEl.textContent = '⚠️ Transcription failed. Please type below.'; }
     }
   );
   updMic(isL ? '🔴 Listening… speak now' : 'Tap mic to start');
 }
 
-function updMic(customMsg){
-  const b=document.getElementById('micbtn'),s=document.getElementById('mstatus');
-  const wrow=document.getElementById('whisper-stop-row');
-  if(!b) return;
-  if(isL&&sttMode==='voice'){
-    b.classList.add('listening'); b.textContent='⏹️';
-    if(customMsg) s.textContent=customMsg;
-    else s.textContent='🔴 Listening… tap to stop';
-    // Show whisper stop row only when NOT using WebSpeech (i.e. using MediaRecorder)
-    if(wrow) wrow.style.display = (!hasSpeechAPI||mediaRec) ? 'block' : 'none';
+function updMic(customMsg) {
+  const b = document.getElementById('micbtn'), s = document.getElementById('mstatus');
+  const wrow = document.getElementById('whisper-stop-row');
+  if (!b) return;
+  if (isL && sttMode === 'voice') {
+    b.classList.add('listening'); b.textContent = '⏹️';
+    if (customMsg) s.textContent = customMsg;
+    if (wrow) wrow.style.display = (!hasSpeechAPI || mediaRec) ? 'block' : 'none';
   } else {
-    b.classList.remove('listening'); b.textContent='🎙️';
-    if(!customMsg||customMsg==='') s.textContent='Tap the mic to start speaking';
-    else s.textContent=customMsg;
-    if(wrow) wrow.style.display='none';
+    b.classList.remove('listening'); b.textContent = '🎙️';
+    if (!customMsg) s.textContent = 'Tap the mic to start speaking';
+    else s.textContent = customMsg;
+    if (wrow) wrow.style.display = 'none';
   }
 }
 
-function useManual(){const v=document.getElementById('manualtxt').value.trim();if(v){document.getElementById('vtx').textContent=v;document.getElementById('vtx').style.borderColor='var(--teal)';}}
-function clearVoice(){document.getElementById('vtx').textContent='Your spoken symptoms will appear here…';document.getElementById('vtx').style.borderColor='var(--border)';document.getElementById('manualtxt').value='';document.getElementById('symres').style.display='none';updMic('');}
-function setSev(el){document.querySelectorAll('.sev').forEach(s=>s.classList.remove('active'));el.classList.add('active');}
+function useManual() { const v = document.getElementById('manualtxt').value.trim(); if (v) { document.getElementById('vtx').textContent = v; document.getElementById('vtx').style.borderColor = 'var(--teal)'; } }
+function clearVoice() { document.getElementById('vtx').textContent = 'Your spoken symptoms will appear here…'; document.getElementById('vtx').style.borderColor = 'var(--border)'; document.getElementById('manualtxt').value = ''; document.getElementById('symres').style.display = 'none'; document.querySelectorAll('.sym-chip').forEach(c => c.classList.remove('picked')); updMic(''); }
+function setSev(el) { document.querySelectorAll('.sev').forEach(s => s.classList.remove('active')); el.classList.add('active'); }
 
-async function analyzeSymptoms(){
-  const txt=document.getElementById('vtx').textContent;
-  if(!txt.trim()||txt.includes('will appear')){showToast('Please speak or type symptoms first');return;}
-  const sev=document.querySelector('.sev.active')?.textContent||'unspecified';
-  const res=document.getElementById('symres');
-  res.style.display='block';
-  res.innerHTML='<div style="text-align:center;padding:18px"><div class="tdots" style="justify-content:center"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><p style="font-size:13px;color:var(--text-soft);margin-top:7px">Analyzing with AI…</p></div>';
-  const reply=await getAI('Patient symptoms: "'+txt+'". Severity: '+sev+'. Briefly assess and advise. Plain text only, under 100 words.');
-  res.innerHTML=`<h3>🔍 AI Health Assessment</h3><p style="font-size:13px;color:var(--text-soft);margin-bottom:9px;">For: "<em>${txt.substring(0,70)}${txt.length>70?'…':''}</em>"</p><p id="srtxt">${reply}</p><p style="margin-top:11px;padding:9px 13px;background:#fef9e7;border-radius:9px;border-left:4px solid var(--saffron);font-size:12px;">⚠️ AI guidance only. Please consult a qualified doctor.</p><button class="spk" onclick="speakText(document.getElementById('srtxt').textContent)">🔊 Read Aloud</button>`;
+async function analyzeSymptoms() {
+  const txt = document.getElementById('vtx').textContent;
+  if (!txt.trim() || txt.includes('will appear')) { showToast('Please speak or type symptoms first'); return; }
+  const sev = document.querySelector('.sev.active')?.textContent || 'unspecified';
+  const res = document.getElementById('symres');
+  res.style.display = 'block';
+  res.innerHTML = '<div style="text-align:center;padding:18px"><div class="tdots" style="justify-content:center"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><p style="font-size:13px;color:var(--text-soft);margin-top:7px">Analyzing with AI…</p></div>';
+
+  const sys = lang === 'te'
+    ? `మీరు సహాయం అనే అనుభవజ్ఞుడైన AI వైద్య సహాయకుడు. రోగి లక్షణాల గురించి వివరంగా తెలుగులో సమాధానం ఇవ్వండి:
+       1. సంభావ్య కారణాలు ఏమిటో చెప్పండి
+       2. ఇంటి చికిత్స చర్యలు ఏమి తీసుకోవాలో చెప్పండి
+       3. ఏ మందులు సాధారణంగా వాడతారో చెప్పండి (తీవ్రత తక్కువగా ఉంటే)
+       4. ఎప్పుడు డాక్టర్ దగ్గరకు వెళ్ళాలో చెప్పండి
+       150 పదాలలోపు సమాధానం ఇవ్వండి.`
+    : `You are Sahayam, an experienced AI health assistant. When given symptoms, provide:
+       1. LIKELY CAUSES: 2-3 probable reasons
+       2. HOME CARE: Immediate steps the patient can take (rest, hydration, diet, etc.)
+       3. COMMON MEDICINES: Generic OTC medicines that help (e.g. paracetamol for fever, antacids for acidity) — only if severity is mild/moderate
+       4. WARNING SIGNS: Specific signs that mean they need a doctor immediately
+       Be specific, practical, and helpful. Plain text, under 150 words. End with one line about seeing a doctor if it worsens.`;
+
+  const reply = await getAI(`Symptoms: "${txt}". Severity: ${sev}. Age/context: Indian adult. Please analyze.`, sys);
+  res.innerHTML = `<div class="ai-card"><h3>🔍 AI Health Assessment</h3><p>For: "<em>${txt.substring(0, 60)}${txt.length > 60 ? '…' : ''}</em>" (${sev})</p><p id="srtxt" style="margin-top:8px">${reply}</p><div class="disclaimer">⚠️ AI guidance only — not a prescription. For emergencies call 108.</div></div><button class="spk" style="margin-top:8px" onclick="speakText(document.getElementById('srtxt').textContent)">🔊 Read Aloud</button>`;
   speakText(reply);
 }
 
-/* ---------- CHAT ---------- */
-let cL=false;
-async function toggleChatMic(){
-  if(cL){ stopSTT(); cL=false; updCMic(false); return; }
-  stopSTT(); cL=true; sttMode='chat';
+/* ==================== CHAT ==================== */
+let cL = false;
+async function toggleChatMic() {
+  if (cL) { stopSTT(); cL = false; updCMic(false); return; }
+  stopSTT(); cL = true; sttMode = 'chat';
   const inp = document.getElementById('chatinput');
-
   await startSTT('chat',
     (txt, final) => {
       inp.value = txt;
-      if(final && hasSpeechAPI){
-        // auto-send on final for WebSpeech
-        stopSTT(); cL=false; updCMic(false);
-        setTimeout(sendChat,300);
-      }
+      if (final && hasSpeechAPI) { stopSTT(); cL = false; updCMic(false); setTimeout(sendChat, 300); }
     },
     (status) => {
-      if(status==='listening-webspeech'||status==='listening-whisper'){ updCMic(true); }
-      else if(status==='transcribing'){ document.getElementById('cmicstatus').textContent='⏳ Transcribing…'; }
-      else if(status==='done'){
-        cL=false; updCMic(false);
-        setTimeout(sendChat,300);
-      }
-      else if(status==='mic-denied'){
-        cL=false; updCMic(false);
-        showToast('🎙️ Please allow microphone access');
-      }
-      else if(status==='api-error'){
-        cL=false; updCMic(false);
-        document.getElementById('cmicstatus').textContent='⚠️ Try again or type your question';
-      }
+      if (status === 'listening-webspeech' || status === 'listening-whisper') { updCMic(true); }
+      else if (status === 'transcribing') { document.getElementById('cmicstatus').textContent = '⏳ Transcribing…'; }
+      else if (status === 'done') { cL = false; updCMic(false); setTimeout(sendChat, 300); }
+      else if (status === 'mic-denied') { cL = false; updCMic(false); showToast('🎙️ Please allow microphone access'); }
+      else if (status === 'api-error') { cL = false; updCMic(false); document.getElementById('cmicstatus').textContent = '⚠️ Try again or type your question'; }
     }
   );
 }
-function stopChatMic(){ stopSTT(); cL=false; updCMic(false); }
-function updCMic(on){
-  const b=document.getElementById('cmicbtn'),s=document.getElementById('cmicstatus');
-  if(!b) return;
-  if(on){b.classList.add('listening');b.textContent='⏹️';s.textContent='🔴 Listening… tap to stop & send';}
-  else{b.classList.remove('listening');b.textContent='🎤';s.textContent='';}
+function updCMic(on) {
+  const b = document.getElementById('cmicbtn'), s = document.getElementById('cmicstatus');
+  if (!b) return;
+  if (on) { b.classList.add('listening'); b.textContent = '⏹️'; s.textContent = '🔴 Listening… tap to stop & send'; }
+  else { b.classList.remove('listening'); b.textContent = '🎤'; s.textContent = ''; }
 }
-
-async function sendChat(){
-  const inp=document.getElementById('chatinput');
-  const msg=inp.value.trim();if(!msg)return;
-  addMsg('user',msg);inp.value='';
-  const typ=addTyping();
-  const reply=await getAI(msg);
+async function sendChat() {
+  const inp = document.getElementById('chatinput');
+  const msg = inp.value.trim(); if (!msg) return;
+  addMsg('user', msg); inp.value = '';
+  const typ = addTyping();
+  const reply = await getAI(msg);
   typ.remove();
-  addMsg('ai',reply,true);
+  addMsg('ai', reply, true);
 }
-function addMsg(role,txt,speak=false){
-  const box=document.getElementById('chatbox');
-  const d=document.createElement('div');d.className='cmsg '+role;
-  const av=document.createElement('div');av.className='cav '+(role==='ai'?'ai':'uav');av.textContent=role==='ai'?'🤖':'👤';
-  const b=document.createElement('div');b.className='cbub';
-  const sp=document.createElement('span');sp.textContent=txt;b.appendChild(sp);
-  if(role==='ai'){
-    const br=document.createElement('br');b.appendChild(br);
-    const sb=document.createElement('button');sb.className='bspk';sb.innerHTML='🔊 Listen';
-    sb.onclick=()=>speakText(txt);b.appendChild(sb);
-  }
-  d.appendChild(av);d.appendChild(b);box.appendChild(d);box.scrollTop=box.scrollHeight;
-  if(speak) speakText(txt);
+function addMsg(role, txt, speak = false) {
+  const box = document.getElementById('chatbox');
+  const d = document.createElement('div'); d.className = 'cmsg ' + role;
+  const av = document.createElement('div'); av.className = 'cav ' + (role === 'ai' ? 'ai' : 'uav'); av.textContent = role === 'ai' ? '🤖' : '👤';
+  const b = document.createElement('div'); b.className = 'cbub';
+  const sp = document.createElement('span'); sp.textContent = txt; b.appendChild(sp);
+  if (role === 'ai') { const br = document.createElement('br'); b.appendChild(br); const sb = document.createElement('button'); sb.className = 'bspk'; sb.innerHTML = '🔊 Listen'; sb.onclick = () => speakText(txt); b.appendChild(sb); }
+  d.appendChild(av); d.appendChild(b); box.appendChild(d); box.scrollTop = box.scrollHeight;
+  if (speak) speakText(txt);
 }
-function addTyping(){
-  const box=document.getElementById('chatbox');
-  const d=document.createElement('div');d.className='cmsg ai';
-  d.innerHTML='<div class="cav ai">🤖</div><div class="cbub"><div class="tdots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>';
-  box.appendChild(d);box.scrollTop=box.scrollHeight;return d;
+function addTyping() {
+  const box = document.getElementById('chatbox');
+  const d = document.createElement('div'); d.className = 'cmsg ai';
+  d.innerHTML = '<div class="cav ai">🤖</div><div class="cbub"><div class="tdots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>';
+  box.appendChild(d); box.scrollTop = box.scrollHeight; return d;
 }
 
-/* ---------- GLOBAL VOICE BAR ---------- */
-let vL=false;
-async function toggleVAB(){
-  if(vL){ stopSTT(); vL=false; updVABbtn(false); return; }
-  stopSTT(); vL=true; sttMode='vab';
-  const out=document.getElementById('vab-out');
-  out.classList.add('show'); out.textContent='🔐 Requesting microphone…';
-
+/* ==================== VAB ==================== */
+let vL = false;
+async function toggleVAB() {
+  if (vL) { stopSTT(); vL = false; updVABbtn(false); return; }
+  stopSTT(); vL = true; sttMode = 'vab';
+  const out = document.getElementById('vab-out');
+  out.classList.add('show'); out.textContent = '🔐 Requesting microphone…';
   await startSTT('vab',
     (txt, final) => {
       out.textContent = '🔴 ' + txt;
-      if(final && hasSpeechAPI){
-        stopSTT(); vL=false; updVABbtn(false);
-        handleVAB(txt);
-      }
+      if (final && hasSpeechAPI) { stopSTT(); vL = false; updVABbtn(false); handleVAB(txt); }
     },
     (status) => {
-      if(status==='listening-webspeech'||status==='listening-whisper'){
-        vL=true; updVABbtn(true);
-        out.classList.add('show');
-        out.textContent='🔴 Listening… speak your question'+(hasSpeechAPI?'':' — tap Stop when done');
-      }
-      else if(status==='transcribing'){ out.textContent='⏳ Transcribing…'; }
-      else if(status==='done'){
-        vL=false; updVABbtn(false);
-        // text already set by onText callback; handleVAB called there
-      }
-      else if(status==='mic-denied'){
-        vL=false; updVABbtn(false);
-        out.textContent='🚫 Mic access denied. Please allow microphone in browser settings.';
-      }
-      else if(status==='api-error'){
-        vL=false; updVABbtn(false);
-        out.textContent='⚠️ Transcription failed. Please type in the AI Chat.';
-      }
+      if (status === 'listening-webspeech' || status === 'listening-whisper') { vL = true; updVABbtn(true); out.classList.add('show'); out.textContent = '🔴 Listening… speak your question'; }
+      else if (status === 'transcribing') { out.textContent = '⏳ Transcribing…'; }
+      else if (status === 'done') { vL = false; updVABbtn(false); }
+      else if (status === 'mic-denied') { vL = false; updVABbtn(false); out.textContent = '🚫 Mic access denied.'; }
+      else if (status === 'api-error') { vL = false; updVABbtn(false); out.textContent = '⚠️ Transcription failed. Try typing in AI Chat.'; }
     }
   );
 }
-
-function updVABbtn(on){const b=document.getElementById('vab-btn');on?(b.classList.add('listening'),b.textContent='⏹️ Stop'):(b.classList.remove('listening'),b.textContent='🎤 Ask by Voice');}
-
-async function handleVAB(q){
-  if(!q||!q.trim()) return;
-  const out=document.getElementById('vab-out');
-  out.textContent='💬 "'+q+'" — thinking…';
-  const r=await getAI(q);
-  out.textContent='🤖 '+r;
+function updVABbtn(on) { const b = document.getElementById('vab-btn'); on ? (b.classList.add('listening'), b.textContent = '⏹️ Stop') : (b.classList.remove('listening'), b.textContent = '🎤 Ask by Voice'); }
+async function handleVAB(q) {
+  if (!q || !q.trim()) return;
+  const out = document.getElementById('vab-out');
+  out.textContent = '💬 "' + q + '" — thinking…';
+  const r = await getAI(q);
+  out.textContent = '🤖 ' + r;
   speakText(r);
 }
 
-/* ---------- REMEDIES ---------- */
-const REM={
-  cold:{t:'🤧 Cold & Cough Remedies',i:['Boil ginger, tulsi leaves, and honey in water. Drink 3 times daily.','Steam inhalation with 2 drops of eucalyptus oil for 10 minutes.','Warm turmeric milk with a pinch of pepper at bedtime.','Gargle with warm salt water 3 times daily.','Avoid cold drinks and refrigerated food.']},
-  fever:{t:'🌡️ Fever Remedies',i:['Drink plenty of warm water and coconut water throughout the day.','Place a cool wet cloth on your forehead.','Boil coriander seeds in water and drink twice daily.','Tulsi, ginger and black pepper decoction twice daily.','If fever is above 102 degrees Fahrenheit, see a doctor immediately.']},
-  head:{t:'🤕 Headache Remedies',i:['Apply peppermint oil on temples and gently massage for 5 minutes.','Apply cinnamon paste on forehead for 5 minutes.','Drink ginger tea with honey.','Drink plenty of water as dehydration causes headaches.','Rest in a quiet dark room.']},
-  stom:{t:'🫃 Stomach Pain Remedies',i:['Boil jeera seeds in water and drink warm.','Mix asafoetida in warm water and drink slowly.','Ginger, lemon juice, and honey tea relieves pain.','Eat light food like khichdi, curd rice, or banana.','Avoid spicy and oily food until pain subsides.']},
-  diab:{t:'🍬 Diabetes Management',i:['Soak fenugreek seeds overnight and eat in the morning.','Drink bitter gourd juice, known as karela, daily.','Mix cinnamon powder in warm water, drink on empty stomach.','Jamun seeds powder controls blood sugar effectively.','Walk 30 minutes daily and monitor sugar regularly.']},
-  bp:{t:'💓 Blood Pressure Remedies',i:['Reduce salt intake immediately.','Eat 2 raw garlic cloves every morning on empty stomach.','Drink coconut water daily for natural electrolytes.','Boil watermelon seeds with khas khas and drink.','Practice yoga and breathing exercises daily.']},
-  joint:{t:'🦴 Joint Pain Remedies',i:['Drink turmeric, ginger and black pepper milk daily.','Massage affected joints with warm sesame oil.','Soak in Epsom salt warm water for 15 minutes.','Massage with garlic and mustard oil.','Reduce refined sugar and processed food.']},
-  sleep:{t:'😴 Sleep Disorder Remedies',i:['Drink warm turmeric milk with nutmeg before bed.','Have chamomile tea 30 minutes before sleep.','Avoid screens for 1 hour before sleeping.','Practice self oil massage with sesame oil.','Brahmi and ashwagandha tea promotes deep sleep.']},
-  skin:{t:'🧴 Skin Problem Remedies',i:['Apply fresh aloe vera gel directly on skin twice daily.','Apply neem leaves paste for skin infections.','Use turmeric and sandalwood powder as a face pack.','Use rose water as a natural toner.','Drink 8 or more glasses of water daily.']},
-  dig:{t:'🌿 Digestion Remedies',i:['Take triphala powder with warm water every night.','Mix ajwain seeds with rock salt in water.','Eat papaya daily for natural digestive enzymes.','Have curd or yogurt with meals as probiotics.','Eat slowly and chew your food well.']},
+/* ==================== REMEDIES ==================== */
+const REM = {
+  cold: { t: '🤧 Cold & Cough Remedies', i: ['Boil ginger, tulsi leaves, and honey in water. Drink 3 times daily.', 'Steam inhalation with 2 drops of eucalyptus oil for 10 minutes.', 'Warm turmeric milk with a pinch of pepper at bedtime.', 'Gargle with warm salt water 3 times daily.', 'Avoid cold drinks and refrigerated food.'] },
+  fever: { t: '🌡️ Fever Remedies', i: ['Drink plenty of warm water and coconut water throughout the day.', 'Place a cool wet cloth on your forehead.', 'Boil coriander seeds in water and drink twice daily.', 'Tulsi, ginger and black pepper decoction twice daily.', 'If fever is above 102°F, see a doctor immediately.'] },
+  head: { t: '🤕 Headache Remedies', i: ['Apply peppermint oil on temples and gently massage for 5 minutes.', 'Apply cinnamon paste on forehead for 5 minutes.', 'Drink ginger tea with honey.', 'Drink plenty of water as dehydration causes headaches.', 'Rest in a quiet dark room.'] },
+  stom: { t: '🫃 Stomach Pain Remedies', i: ['Boil jeera seeds in water and drink warm.', 'Mix asafoetida in warm water and drink slowly.', 'Ginger, lemon juice, and honey tea relieves pain.', 'Eat light food like khichdi, curd rice, or banana.', 'Avoid spicy and oily food until pain subsides.'] },
+  diab: { t: '🍬 Diabetes Management', i: ['Soak fenugreek seeds overnight and eat in the morning.', 'Drink bitter gourd juice daily.', 'Mix cinnamon powder in warm water, drink on empty stomach.', 'Jamun seeds powder controls blood sugar effectively.', 'Walk 30 minutes daily and monitor sugar regularly.'] },
+  bp: { t: '💓 Blood Pressure Remedies', i: ['Reduce salt intake immediately.', 'Eat 2 raw garlic cloves every morning on empty stomach.', 'Drink coconut water daily for natural electrolytes.', 'Practice yoga and breathing exercises daily.', 'Avoid stress, caffeine, and alcohol.'] },
+  joint: { t: '🦴 Joint Pain Remedies', i: ['Drink turmeric, ginger and black pepper milk daily.', 'Massage affected joints with warm sesame oil.', 'Soak in Epsom salt warm water for 15 minutes.', 'Reduce refined sugar and processed food.', 'Do gentle stretching exercises daily.'] },
+  sleep: { t: '😴 Sleep Disorder Remedies', i: ['Drink warm turmeric milk with nutmeg before bed.', 'Have chamomile tea 30 minutes before sleep.', 'Avoid screens for 1 hour before sleeping.', 'Practice self oil massage with sesame oil.', 'Brahmi and ashwagandha tea promotes deep sleep.'] },
+  skin: { t: '🧴 Skin Problem Remedies', i: ['Apply fresh aloe vera gel directly on skin twice daily.', 'Apply neem leaves paste for skin infections.', 'Use turmeric and sandalwood powder as a face pack.', 'Use rose water as a natural toner.', 'Drink 8 or more glasses of water daily.'] },
+  dig: { t: '🌿 Digestion Remedies', i: ['Take triphala powder with warm water every night.', 'Mix ajwain seeds with rock salt in water.', 'Eat papaya daily for natural digestive enzymes.', 'Have curd or yogurt with meals as probiotics.', 'Eat slowly and chew your food well.'] },
 };
-function showR(k){
-  document.querySelectorAll('.rtag').forEach(t=>t.classList.remove('active'));
+function showR(k) {
+  document.querySelectorAll('.rtag').forEach(t => t.classList.remove('active'));
   event.target.closest('.rtag').classList.add('active');
-  const r=REM[k];
-  const spTxt=r.t+'. '+r.i.join('. ');
-  document.getElementById('rbox').innerHTML=`<h3>${r.t}</h3><ul>${r.i.map(x=>`<li>${x}</li>`).join('')}</ul><p style="margin-top:10px;font-size:12px;color:var(--text-soft);">⚠️ Traditional remedies. Consult a doctor if symptoms persist.</p><button class="spk" onclick='speakText(${JSON.stringify(spTxt)})'>🔊 Read Aloud</button>`;
+  const r = REM[k];
+  const spTxt = r.t + '. ' + r.i.join('. ');
+  document.getElementById('rbox').innerHTML = `<h3>${r.t}</h3><ul>${r.i.map(x => `<li>${x}</li>`).join('')}</ul><p style="margin-top:10px;font-size:12px;color:var(--text-soft);">⚠️ Traditional remedies. Consult a doctor if symptoms persist beyond 3 days.</p><button class="spk" onclick='speakText(${JSON.stringify(spTxt)})'>🔊 Read Aloud</button>`;
   speakText(spTxt);
 }
 
-/* ---------- TIPS ---------- */
-const TIPS=[
-  {e:'💧',t:'Stay Hydrated',p:'Drink at least 8 glasses of water daily. Start your morning with 2 glasses of warm water. Dehydration causes headaches, fatigue, and kidney problems.'},
-  {e:'🚶',t:'Walk Daily',p:'A 30 minute brisk walk reduces the risk of diabetes, heart disease, and depression by 30 to 40 percent. Even 10 minute walks after meals improve blood sugar control significantly.'},
-  {e:'🌙',t:'Sleep Well',p:'Adults need 7 to 8 hours of quality sleep. Sleep before 11 PM and wake by 6 AM. Poor sleep weakens immunity and increases risk of obesity, diabetes, and heart disease.'},
-  {e:'🍎',t:'Eat Seasonal Fruits',p:'Eat 2 to 3 seasonal fruits daily. In Hyderabad enjoy mangoes, guava, banana, and papaya. Fruits provide natural vitamins, minerals, and antioxidants.'},
-  {e:'🧘',t:'Manage Stress',p:'Practice 10 minutes of meditation or deep breathing daily. Chronic stress raises cortisol and blood pressure. Even simple breathing exercises can calm your nervous system.'},
-  {e:'☀️',t:'Get Morning Sunlight',p:'Spend 15 to 20 minutes in morning sunlight daily. This boosts Vitamin D, improves mood, regulates sleep, and strengthens bones and immunity.'},
-  {e:'🧂',t:'Reduce Salt',p:'High salt intake causes high blood pressure. Limit to 5 grams per day. Avoid pickles, papad, and packed foods. Use lime juice and herbs instead of excess salt.'},
-  {e:'🫁',t:'Deep Breathing',p:'Practice Pranayama for 10 minutes daily. Alternate nostril breathing reduces anxiety, improves lung capacity, and helps control blood pressure naturally.'},
+/* ==================== TIPS ==================== */
+const TIPS = [
+  { e: '💧', t: 'Stay Hydrated', p: 'Drink at least 8 glasses of water daily. Start your morning with 2 glasses of warm water. Dehydration causes headaches, fatigue, and kidney problems.' },
+  { e: '🚶', t: 'Walk Daily', p: 'A 30 minute brisk walk reduces the risk of diabetes, heart disease, and depression by 30 to 40 percent. Even 10 minute walks after meals improve blood sugar control significantly.' },
+  { e: '🌙', t: 'Sleep Well', p: 'Adults need 7 to 8 hours of quality sleep. Sleep before 11 PM and wake by 6 AM. Poor sleep weakens immunity and increases risk of obesity, diabetes, and heart disease.' },
+  { e: '🍎', t: 'Eat Seasonal Fruits', p: 'Eat 2 to 3 seasonal fruits daily. In Hyderabad enjoy mangoes, guava, banana, and papaya. Fruits provide natural vitamins, minerals, and antioxidants.' },
+  { e: '🧘', t: 'Manage Stress', p: 'Practice 10 minutes of meditation or deep breathing daily. Chronic stress raises cortisol and blood pressure. Even simple breathing exercises can calm your nervous system.' },
+  { e: '☀️', t: 'Get Morning Sunlight', p: 'Spend 15 to 20 minutes in morning sunlight daily. This boosts Vitamin D, improves mood, regulates sleep, and strengthens bones and immunity.' },
+  { e: '🧂', t: 'Reduce Salt', p: 'High salt intake causes high blood pressure. Limit to 5 grams per day. Avoid pickles, papad, and packed foods. Use lime juice and herbs instead of excess salt.' },
+  { e: '🫁', t: 'Deep Breathing', p: 'Practice Pranayama for 10 minutes daily. Alternate nostril breathing reduces anxiety, improves lung capacity, and helps control blood pressure naturally.' },
 ];
-let ti=0;
-function showTip(){const t=TIPS[ti];document.getElementById('tipdisp').innerHTML=`<div class="tipcard"><div class="te">${t.e}</div><h3>${t.t}</h3><p>${t.p}</p></div>`;}
-function nextTip(){ti=(ti+1)%TIPS.length;showTip();speakTip();}
-function prevTip(){ti=(ti-1+TIPS.length)%TIPS.length;showTip();speakTip();}
-function speakTip(){speakText(TIPS[ti].t+'. '+TIPS[ti].p);}
+let ti = 0;
+function showTip() { const t = TIPS[ti]; document.getElementById('tipdisp').innerHTML = `<div class="tipcard"><div class="te">${t.e}</div><h3>${t.t}</h3><p>${t.p}</p></div>`; }
+function nextTip() { ti = (ti + 1) % TIPS.length; showTip(); speakTip(); }
+function prevTip() { ti = (ti - 1 + TIPS.length) % TIPS.length; showTip(); speakTip(); }
+function speakTip() { speakText(TIPS[ti].t + '. ' + TIPS[ti].p); }
 
-/* ---------- BMI ---------- */
-function calcBMI(){
-  const w=parseFloat(document.getElementById('bwt').value);
-  const h=parseFloat(document.getElementById('bht').value)/100;
-  if(!w||!h||w<=0||h<=0){showToast('Please enter valid weight and height');return;}
-  const bmi=(w/(h*h)).toFixed(1);
-  let lbl,col,adv,pct;
-  if(bmi<18.5){lbl='Underweight';col='#3498db';pct=10;adv='Your BMI is '+bmi+'. You are underweight. Increase calorie intake with nutritious foods like nuts, dairy, bananas, and lentils. Consult a dietician.';}
-  else if(bmi<25){lbl='Normal Weight ✅';col='#2ecc71';pct=38;adv='Excellent! Your BMI is '+bmi+'. This is the healthy range. Maintain it with balanced diet, regular exercise, and adequate sleep. Well done!';}
-  else if(bmi<30){lbl='Overweight';col='#f1c40f';pct=63;adv='Your BMI is '+bmi+'. You are slightly overweight. Start a 30 minute daily walk and reduce processed foods and sugar. Small changes make a big difference.';}
-  else{lbl='Obese';col='#e74c3c';pct=88;adv='Your BMI is '+bmi+'. Please consult a doctor. Start with low impact exercise like walking or swimming and follow a calorie controlled diet.';}
-  bmiAdvice=adv;
-  document.getElementById('bmidisp').style.display='block';
-  document.getElementById('bmiv').textContent=bmi;document.getElementById('bmiv').style.color=col;
-  document.getElementById('bmil').textContent=lbl;document.getElementById('bmil').style.color=col;
-  document.getElementById('bmiptr').style.left=pct+'%';
-  document.getElementById('bmiadvice').textContent=adv;
+/* ==================== BMI ==================== */
+function calcBMI() {
+  const w = parseFloat(document.getElementById('bwt').value);
+  const h = parseFloat(document.getElementById('bht').value) / 100;
+  if (!w || !h || w <= 0 || h <= 0) { showToast('Please enter valid weight and height'); return; }
+  const bmi = (w / (h * h)).toFixed(1);
+  let lbl, col, adv, pct;
+  if (bmi < 18.5) { lbl = 'Underweight'; col = '#3498db'; pct = 10; adv = 'Your BMI is ' + bmi + '. You are underweight. Increase calorie intake with nutritious foods like nuts, dairy, bananas, and lentils. Consult a dietician.'; }
+  else if (bmi < 25) { lbl = 'Normal Weight ✅'; col = '#2ecc71'; pct = 38; adv = 'Excellent! Your BMI is ' + bmi + '. This is the healthy range. Maintain it with balanced diet, regular exercise, and adequate sleep.'; }
+  else if (bmi < 30) { lbl = 'Overweight'; col = '#f1c40f'; pct = 63; adv = 'Your BMI is ' + bmi + '. You are slightly overweight. Start a 30 minute daily walk and reduce processed foods and sugar. Small changes make a big difference.'; }
+  else { lbl = 'Obese'; col = '#e74c3c'; pct = 88; adv = 'Your BMI is ' + bmi + '. Please consult a doctor. Start with low impact exercise like walking or swimming and follow a calorie controlled diet.'; }
+  bmiAdvice = adv;
+  document.getElementById('bmidisp').style.display = 'block';
+  document.getElementById('bmiv').textContent = bmi; document.getElementById('bmiv').style.color = col;
+  document.getElementById('bmil').textContent = lbl; document.getElementById('bmil').style.color = col;
+  document.getElementById('bmiptr').style.left = pct + '%';
+  document.getElementById('bmiadvice').textContent = adv;
   speakText(adv);
 }
-function speakBMI(){bmiAdvice?speakText(bmiAdvice):showToast('Please calculate BMI first');}
+function speakBMI() { bmiAdvice ? speakText(bmiAdvice) : showToast('Please calculate BMI first'); }
 
-/* ---------- SAHAYAM ---------- */
-let selHT='';
-function selHelp(el,t){
-  document.querySelectorAll('.htbtn').forEach(b=>b.classList.remove('sel'));
-  el.classList.add('sel');selHT=t;document.getElementById('sht').value=t;
-  speakText(T('You selected '+t+'. Please fill your name, phone, and address below.','మీరు '+t+' ఎంచుకున్నారు. దయచేసి మీ పేరు, ఫోన్ మరియు చిరునామా నింపండి.'));
-}
-function submitReq(){
-  const n=document.getElementById('rname').value.trim();
-  const p=document.getElementById('rphone').value.trim();
-  const a=document.getElementById('raddr').value.trim();
-  const nt=document.getElementById('rnotes').value.trim();
-  if(!selHT){showToast('Please select a type of help');return;}
-  if(!n||!p||!a){showToast('Please fill name, phone and address');return;}
-  const reqs=JSON.parse(localStorage.getItem('sah-reqs')||'[]');
-  reqs.unshift({type:selHT,name:n,phone:p,address:a,notes:nt,time:new Date().toLocaleString('en-IN'),id:Date.now()});
-  localStorage.setItem('sah-reqs',JSON.stringify(reqs));
-  ['rname','rphone','raddr','rnotes'].forEach(id=>document.getElementById(id).value='');
-  document.querySelectorAll('.htbtn').forEach(b=>b.classList.remove('sel'));
-  selHT='';
-  showToast('🙏 Help request submitted! A volunteer will contact you soon.');
-  speakText(T('Your help request has been submitted successfully. A volunteer will contact you soon. Thank you.','మీ సహాయ అభ్యర్థన విజయవంతంగా సమర్పించబడింది. ఒక వాలంటీర్ మీకు త్వరలో సంప్రదిస్తారు. ధన్యవాదాలు.'));
-  renderBoard();
-  renderVolBoard();
-}
-function renderBoard(){
-  const reqs=JSON.parse(localStorage.getItem('sah-reqs')||'[]');
-  const ico={'Medicine Pickup':'💊','Grocery Shopping':'🛒','Hospital Visit':'🏥','Walking Assistance':'🚶','Emergency Help':'🚑','Talking Companion':'☎️'};
-  const b=document.getElementById('volboard');
-  if(!reqs.length){b.innerHTML='<p style="color:var(--text-soft);font-size:13px;">No requests yet.</p>';return;}
-  b.innerHTML=reqs.map(r=>`<div class="rcard"><div class="rci">${ico[r.type]||'🤝'}</div><div class="rci2"><h4>${r.type}</h4><p>👤 ${r.name} | 📞 <a href="tel:${r.phone}" style="color:var(--teal);font-weight:700;">${r.phone}</a><br>📍 ${r.address}${r.notes?'<br>📝 '+r.notes:''}</p><span class="rbadge">📅 ${r.time}</span></div></div>`).join('');
-}
-function swTab(tab,el){
-  document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));el.classList.add('active');
-  document.getElementById('tab-req').style.display=tab==='req'?'block':'none';
-  document.getElementById('tab-vol').style.display=tab==='vol'?'block':'none';
-  if(tab==='vol') renderBoard();
-}
+/* ==================== DRUG INTERACTION CHECKER (NEW) ==================== */
+async function checkDrugs() {
+  const d1 = document.getElementById('drug1').value.trim();
+  const d2 = document.getElementById('drug2').value.trim();
+  const d3 = document.getElementById('drug3').value.trim();
+  const ctx = document.getElementById('drugctx').value.trim();
+  if (!d1 || !d2) { showToast('Please enter at least 2 medicines'); return; }
+  const drugs = [d1, d2, d3].filter(Boolean);
+  const res = document.getElementById('drug-result');
+  res.innerHTML = '<div style="text-align:center;padding:18px"><div class="tdots" style="justify-content:center"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><p style="font-size:13px;color:var(--text-soft);margin-top:7px">Checking interactions with AI…</p></div>';
 
-/* ================================================================
-   VOLUNTEER BOARD — Full standalone panel
-================================================================ */
-const VOL_ICO={'Medicine Pickup':'💊','Grocery Shopping':'🛒','Hospital Visit':'🏥','Walking Assistance':'🚶','Emergency Help':'🚑','Talking Companion':'☎️'};
-const VOL_COLOR={'Medicine Pickup':'#9b59b6','Grocery Shopping':'#27ae60','Hospital Visit':'#e74c3c','Walking Assistance':'#3498db','Emergency Help':'#e05252','Talking Companion':'#f5a623'};
-let volFilter='all';
+  const sys = `You are a clinical pharmacist AI. When asked about drug interactions, provide:
+1. Whether the combination is SAFE, CAUTION ADVISED, or AVOID
+2. Specific interaction risks if any (e.g. increased bleeding, low blood pressure, kidney stress)
+3. What to watch for (symptoms of adverse reaction)
+4. Practical advice (timing, food, monitoring)
+Keep it under 180 words. Plain text only. Be specific and helpful, not generic.
+${ctx ? 'Patient context: ' + ctx : ''}`;
 
-function openPanel(id){
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  const p=document.getElementById('panel-'+id);
-  if(p){p.classList.add('active');p.scrollIntoView({behavior:'smooth',block:'start'});}
-  if(id==='tips') showTip();
-  if(id==='diary') loadD();
-  if(id==='sah') renderBoard();
-  if(id==='vol') renderVolBoard();
+  const prompt = `Check interactions between these medicines: ${drugs.join(', ')}. Patient: ${ctx || 'Indian adult'}. Provide detailed interaction analysis.`;
+  const reply = await getAI(prompt, sys);
+
+  const isRisky = /avoid|dangerous|serious|do not|contraindicated|severe/i.test(reply);
+  const isCaution = /caution|monitor|careful|consult|check/i.test(reply);
+  const boxClass = isRisky ? 'warn-box' : isCaution ? '' : 'safe-box';
+  const boxTitle = isRisky ? '⚠️ Potential Interaction Detected' : isCaution ? '⚡ Use with Caution' : '✅ Generally Safe Combination';
+
+  res.innerHTML = `<div class="drug-result">
+    <h3>💊 Drug Interaction Report</h3>
+    <div>Medicines checked: ${drugs.map(d => `<span class="drug-tag">${d}</span>`).join('')}</div>
+    <div class="${boxClass || 'safe-box'}" style="margin-top:12px">
+      <h4>${boxTitle}</h4>
+      <p id="drug-reply-txt" style="font-size:13px;line-height:1.8;">${reply}</p>
+    </div>
+    <p style="margin-top:11px;font-size:12px;color:var(--text-soft);">⚠️ Always confirm with your pharmacist or doctor before taking any medicine combination.</p>
+    <button class="spk" style="margin-top:8px" onclick="speakText(document.getElementById('drug-reply-txt').textContent)">🔊 Read Aloud</button>
+  </div>`;
+  speakText(reply);
 }
 
-function renderVolBoard(filter){
-  if(filter!==undefined) volFilter=filter;
-  const all=JSON.parse(localStorage.getItem('sah-reqs')||'[]');
-  const done=JSON.parse(localStorage.getItem('sah-done')||'[]');
-
-  // Stats
-  const open=all.filter(r=>!done.includes(r.id));
-  const statsEl=document.getElementById('vol-stats');
-  if(statsEl){
-    statsEl.innerHTML=`
-      <div class="vol-stat"><div class="vsn">${all.length}</div><div class="vsl">Total Requests</div></div>
-      <div class="vol-stat"><div class="vsn" style="color:#e05252">${open.length}</div><div class="vsl">Needs Help</div></div>
-      <div class="vol-stat"><div class="vsn" style="color:#27ae60">${done.length}</div><div class="vsl">Completed</div></div>
-      <div class="vol-stat"><div class="vsn" style="color:var(--saffron)">${all.filter(r=>r.type==='Emergency Help').length}</div><div class="vsl">Emergency</div></div>
-    `;
-  }
-
-  // Update dashboard badge
-  const badge=document.getElementById('vol-badge');
-  if(badge && open.length>0){
-    badge.textContent=open.length;
-    badge.style.cssText='display:inline-block;background:#e05252;color:#fff;border-radius:50%;padding:1px 7px;font-size:12px;margin-left:4px;';
-  } else if(badge){ badge.style.display='none'; }
-
-  // Filter
-  let reqs=all;
-  if(volFilter && volFilter!=='all') reqs=all.filter(r=>r.type===volFilter);
-
-  const list=document.getElementById('vol-list');
-  if(!list) return;
-
-  if(!reqs.length){
-    list.innerHTML=`<div class="vol-empty"><div class="ve-icon">🤝</div><h3>No requests yet</h3><p>When elders or community members request help, their requests will appear here.<br><br>Share this app with people who need help!</p></div>`;
-    return;
-  }
-
-  // Sort: Emergency first, then open before done, then by time
-  reqs.sort((a,b)=>{
-    const aUrgent=a.type==='Emergency Help', bUrgent=b.type==='Emergency Help';
-    const aDone=done.includes(a.id), bDone=done.includes(b.id);
-    if(aUrgent&&!bUrgent) return -1;
-    if(!aUrgent&&bUrgent) return 1;
-    if(!aDone&&bDone) return -1;
-    if(aDone&&!bDone) return 1;
-    return b.id-a.id;
+/* ==================== VITAL SIGNS TRACKER (NEW) ==================== */
+let currentVitalTab = 'bp';
+function vitalTab(tab, el) {
+  currentVitalTab = tab;
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active')); el.classList.add('active');
+  ['bp','sugar','pulse','weight'].forEach(t => {
+    document.getElementById('vital-' + t + '-form').style.display = t === tab ? 'block' : 'none';
   });
+  loadVitalHistory(tab);
+}
 
-  list.innerHTML = reqs.map(r => {
-    const isDone=done.includes(r.id);
-    const isUrgent=r.type==='Emergency Help';
-    const color=VOL_COLOR[r.type]||'#1a9e8f';
-    const tag=isDone?`<span class="vtag done-tag">✅ Done</span>`
-              :isUrgent?`<span class="vtag urgent">🚨 Urgent</span>`
-              :`<span class="vtag">${r.type}</span>`;
-    return `
-    <div class="vreq-card ${isDone?'done':''} ${isUrgent&&!isDone?'urgent':''}" id="vcard-${r.id}">
-      <div class="vreq-top">
-        <div class="vreq-icon" style="background:${color}22;">${VOL_ICO[r.type]||'🤝'}</div>
-        <div class="vreq-info">
-          <div class="vreq-type">${r.type} ${tag}</div>
-          <div class="vreq-meta">
-            👤 <strong>${r.name}</strong><br>
-            📍 ${r.address}<br>
-            ${r.notes?'📝 '+r.notes+'<br>':''}
-          </div>
-        </div>
-      </div>
-      <div class="vreq-actions">
-        <a href="tel:${r.phone}" class="vcall-btn">📞 Call ${r.phone}</a>
-        <button class="vdone-btn ${isDone?'marked':''}" onclick="markDone(${r.id},this)">${isDone?'✅ Helped':'✅ Mark as Done'}</button>
-        <button class="vdel-btn" onclick="deleteReq(${r.id})">🗑️ Remove</button>
-      </div>
-      <div class="vreq-time">📅 Requested: ${r.time}</div>
+function logVital(type) {
+  let val = '', display = '';
+  if (type === 'bp') {
+    const sys = document.getElementById('v-sys').value, dia = document.getElementById('v-dia').value;
+    if (!sys || !dia) { showToast('Please enter both systolic and diastolic'); return; }
+    val = sys + '/' + dia; display = sys + '/' + dia + ' mmHg';
+    document.getElementById('v-sys').value = ''; document.getElementById('v-dia').value = '';
+  } else if (type === 'sugar') {
+    const s = document.getElementById('v-sug').value, w = document.getElementById('v-sug-when').value;
+    if (!s) { showToast('Please enter blood sugar value'); return; }
+    val = s + '|' + w; display = s + ' mg/dL (' + w + ')';
+    document.getElementById('v-sug').value = '';
+  } else if (type === 'pulse') {
+    const p = document.getElementById('v-pulse').value;
+    if (!p) { showToast('Please enter pulse rate'); return; }
+    val = p; display = p + ' bpm'; document.getElementById('v-pulse').value = '';
+  } else if (type === 'weight') {
+    const w = document.getElementById('v-wt').value;
+    if (!w) { showToast('Please enter weight'); return; }
+    val = w; display = w + ' kg'; document.getElementById('v-wt').value = '';
+  }
+  const key = 'vitals-' + type;
+  const hist = JSON.parse(localStorage.getItem(key) || '[]');
+  hist.unshift({ val, display, time: new Date().toLocaleString('en-IN', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) });
+  localStorage.setItem(key, JSON.stringify(hist.slice(0, 30)));
+  showToast('✅ ' + display + ' logged!');
+  loadVitalHistory(type);
+  renderVitalSummary();
+}
+
+function loadVitalHistory(type) {
+  const hist = JSON.parse(localStorage.getItem('vitals-' + type) || '[]');
+  const el = document.getElementById('vh-' + type);
+  if (!el) return;
+  if (!hist.length) { el.innerHTML = '<p style="color:var(--text-soft);font-size:13px;padding:10px 0;">No readings yet. Log your first reading above.</p>'; return; }
+  el.innerHTML = hist.map(h => {
+    let statusHtml = '';
+    if (type === 'bp') {
+      const [s, d] = h.val.split('/').map(Number);
+      const ok = s < 120 && d < 80, high = s >= 140 || d >= 90;
+      statusHtml = `<span class="vcs ${ok ? 'normal-s' : high ? 'high-s' : 'low-s'}">${ok ? 'Normal' : high ? 'High' : 'Elevated'}</span>`;
+    } else if (type === 'sugar') {
+      const v = parseFloat(h.val), fasting = h.val.includes('Fasting');
+      const ok = fasting ? v < 100 : v < 140, high = fasting ? v >= 126 : v >= 200;
+      statusHtml = `<span class="vcs ${ok ? 'normal-s' : high ? 'high-s' : 'low-s'}">${ok ? 'Normal' : high ? 'High' : 'Borderline'}</span>`;
+    } else if (type === 'pulse') {
+      const v = parseFloat(h.val);
+      const ok = v >= 60 && v <= 100;
+      statusHtml = `<span class="vcs ${ok ? 'normal-s' : 'high-s'}">${ok ? 'Normal' : v < 60 ? 'Low' : 'High'}</span>`;
+    }
+    return `<div class="vh-row"><span class="vh-val">${h.display}</span>${statusHtml}<span class="vh-date">${h.time}</span></div>`;
+  }).join('');
+}
+
+function renderVitalSummary() {
+  const types = [
+    { key: 'bp', icon: '🩸', name: 'Blood Pressure', unit: 'mmHg', normal: 'Normal: <120/80' },
+    { key: 'sugar', icon: '🍬', name: 'Blood Sugar', unit: 'mg/dL', normal: 'Fasting: <100' },
+    { key: 'pulse', icon: '💓', name: 'Pulse Rate', unit: 'bpm', normal: 'Normal: 60-100' },
+    { key: 'weight', icon: '⚖️', name: 'Weight', unit: 'kg', normal: 'Track over time' },
+  ];
+  const el = document.getElementById('vital-summary');
+  if (!el) return;
+  el.innerHTML = types.map(t => {
+    const hist = JSON.parse(localStorage.getItem('vitals-' + t.key) || '[]');
+    const latest = hist[0];
+    return `<div class="vital-card" onclick="vitalTab('${t.key}', document.querySelectorAll('.tabbtn')[${['bp','sugar','pulse','weight'].indexOf(t.key)}])">
+      <div class="vci">${t.icon}</div>
+      <div class="vcn">${t.name}</div>
+      <div class="vcv">${latest ? latest.display.split(' ')[0] : '—'}</div>
+      <div style="font-size:11px;color:var(--text-soft);margin-top:3px">${latest ? latest.display : 'No data yet'}</div>
     </div>`;
   }).join('');
 }
 
-function filterVol(type, el){
-  document.querySelectorAll('.vfbtn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  renderVolBoard(type);
+async function analyzeVitals() {
+  const all = ['bp','sugar','pulse','weight'].map(t => {
+    const hist = JSON.parse(localStorage.getItem('vitals-' + t) || '[]');
+    return hist.length ? `${t}: ${hist.slice(0,3).map(h => h.display).join(', ')}` : null;
+  }).filter(Boolean);
+  if (!all.length) { showToast('Please log some readings first'); return; }
+  const res = document.getElementById('vital-ai-result');
+  res.innerHTML = '<div style="padding:14px;text-align:center"><div class="tdots" style="justify-content:center"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>';
+  const sys = `You are a health monitoring AI. Analyze the patient's recent vital signs readings. 
+  Identify any concerning trends, explain what the readings mean, and give specific actionable advice.
+  Be warm, helpful, specific. Under 200 words. Plain text.`;
+  const reply = await getAI('My recent vital signs readings: ' + all.join('. ') + '. Please analyze these and tell me if anything needs attention.', sys);
+  res.innerHTML = `<div class="ai-card" style="margin-top:14px"><h3>🤖 AI Vitals Analysis</h3><p id="vitals-ai-txt">${reply}</p><div class="disclaimer">⚠️ AI analysis only. Consult your doctor for medical decisions.</div></div><button class="spk" style="margin-top:8px" onclick="speakText(document.getElementById('vitals-ai-txt').textContent)">🔊 Read Aloud</button>`;
+  speakText(reply);
 }
 
-function markDone(id, btn){
-  const done=JSON.parse(localStorage.getItem('sah-done')||'[]');
-  if(!done.includes(id)){
-    done.push(id);
-    localStorage.setItem('sah-done',JSON.stringify(done));
-    showToast('✅ Marked as helped! Thank you for volunteering 🙏');
-    speakText(T('Thank you for helping! You have made a difference in someones life today.','సహాయం చేసినందుకు ధన్యవాదాలు! మీరు ఒకరి జీవితంలో మార్పు తెచ్చారు.'));
-  } else {
-    const i=done.indexOf(id);
-    done.splice(i,1);
-    localStorage.setItem('sah-done',JSON.stringify(done));
-    showToast('Unmarked — request is open again');
-  }
+/* ==================== SAHAYAM / VOLUNTEER ==================== */
+let selHT = '';
+function selHelp(el, t) {
+  document.querySelectorAll('.htbtn').forEach(b => b.classList.remove('sel'));
+  el.classList.add('sel'); selHT = t; document.getElementById('sht').value = t;
+  speakText(T('You selected ' + t + '. Please fill your name, phone, and address below.', 'మీరు ' + t + ' ఎంచుకున్నారు. దయచేసి మీ పేరు, ఫోన్ మరియు చిరునామా నింపండి.'));
+}
+function submitReq() {
+  const n = document.getElementById('rname').value.trim(), p = document.getElementById('rphone').value.trim(), a = document.getElementById('raddr').value.trim(), nt = document.getElementById('rnotes').value.trim();
+  if (!selHT) { showToast('Please select a type of help'); return; }
+  if (!n || !p || !a) { showToast('Please fill name, phone and address'); return; }
+  const reqs = JSON.parse(localStorage.getItem('sah-reqs') || '[]');
+  reqs.unshift({ type: selHT, name: n, phone: p, address: a, notes: nt, time: new Date().toLocaleString('en-IN'), id: Date.now() });
+  localStorage.setItem('sah-reqs', JSON.stringify(reqs));
+  ['rname','rphone','raddr','rnotes'].forEach(id => document.getElementById(id).value = '');
+  document.querySelectorAll('.htbtn').forEach(b => b.classList.remove('sel')); selHT = '';
+  showToast('🙏 Help request submitted! A volunteer will contact you soon.');
+  speakText(T('Your help request has been submitted. A volunteer will contact you soon. Thank you.', 'మీ సహాయ అభ్యర్థన సమర్పించబడింది. ఒక వాలంటీర్ మీకు త్వరలో సంప్రదిస్తారు.'));
+  renderBoard(); renderVolBoard();
+}
+function renderBoard() {
+  const reqs = JSON.parse(localStorage.getItem('sah-reqs') || '[]');
+  const ico = { 'Medicine Pickup': '💊', 'Grocery Shopping': '🛒', 'Hospital Visit': '🏥', 'Walking Assistance': '🚶', 'Emergency Help': '🚑', 'Talking Companion': '☎️' };
+  const b = document.getElementById('volboard');
+  if (!reqs.length) { b.innerHTML = '<p style="color:var(--text-soft);font-size:13px;">No requests yet.</p>'; return; }
+  b.innerHTML = reqs.map(r => `<div class="rcard"><div class="rci">${ico[r.type] || '🤝'}</div><div class="rci2"><h4>${r.type}</h4><p>👤 ${r.name} | 📞 <a href="tel:${r.phone}" style="color:var(--teal);font-weight:700;">${r.phone}</a><br>📍 ${r.address}${r.notes ? '<br>📝 ' + r.notes : ''}</p><span class="rbadge">📅 ${r.time}</span></div></div>`).join('');
+}
+function swTab(tab, el) {
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active')); el.classList.add('active');
+  document.getElementById('tab-req').style.display = tab === 'req' ? 'block' : 'none';
+  document.getElementById('tab-vol').style.display = tab === 'vol' ? 'block' : 'none';
+  if (tab === 'vol') renderBoard();
+}
+
+const VOL_ICO = { 'Medicine Pickup': '💊', 'Grocery Shopping': '🛒', 'Hospital Visit': '🏥', 'Walking Assistance': '🚶', 'Emergency Help': '🚑', 'Talking Companion': '☎️' };
+const VOL_COLOR = { 'Medicine Pickup': '#9b59b6', 'Grocery Shopping': '#27ae60', 'Hospital Visit': '#e74c3c', 'Walking Assistance': '#3498db', 'Emergency Help': '#e05252', 'Talking Companion': '#f5a623' };
+let volFilter = 'all';
+
+function renderVolBoard(filter) {
+  if (filter !== undefined) volFilter = filter;
+  const all = JSON.parse(localStorage.getItem('sah-reqs') || '[]');
+  const done = JSON.parse(localStorage.getItem('sah-done') || '[]');
+  const open = all.filter(r => !done.includes(r.id));
+  const statsEl = document.getElementById('vol-stats');
+  if (statsEl) statsEl.innerHTML = `<div class="vol-stat"><div class="vsn">${all.length}</div><div class="vsl">Total Requests</div></div><div class="vol-stat"><div class="vsn" style="color:#e05252">${open.length}</div><div class="vsl">Needs Help</div></div><div class="vol-stat"><div class="vsn" style="color:#27ae60">${done.length}</div><div class="vsl">Completed</div></div><div class="vol-stat"><div class="vsn" style="color:var(--saffron)">${all.filter(r => r.type === 'Emergency Help').length}</div><div class="vsl">Emergency</div></div>`;
+  const badge = document.getElementById('vol-badge');
+  if (badge && open.length > 0) { badge.textContent = open.length; badge.style.cssText = 'display:inline-block;background:#e05252;color:#fff;border-radius:50%;padding:1px 7px;font-size:12px;margin-left:4px;'; }
+  else if (badge) badge.style.display = 'none';
+  let reqs = all;
+  if (volFilter && volFilter !== 'all') reqs = all.filter(r => r.type === volFilter);
+  const list = document.getElementById('vol-list');
+  if (!list) return;
+  if (!reqs.length) { list.innerHTML = '<div class="vol-empty"><div class="ve-icon">🤝</div><h3>No requests yet</h3><p>Help requests will appear here.</p></div>'; return; }
+  reqs.sort((a, b) => { const au = a.type === 'Emergency Help', bu = b.type === 'Emergency Help'; const ad = done.includes(a.id), bd = done.includes(b.id); if (au && !bu) return -1; if (!au && bu) return 1; if (!ad && bd) return -1; if (ad && !bd) return 1; return b.id - a.id; });
+  list.innerHTML = reqs.map(r => {
+    const isDone = done.includes(r.id), isUrgent = r.type === 'Emergency Help';
+    const color = VOL_COLOR[r.type] || '#1a9e8f';
+    const tag = isDone ? `<span class="vtag done-tag">✅ Done</span>` : isUrgent ? `<span class="vtag urgent">🚨 Urgent</span>` : `<span class="vtag">${r.type}</span>`;
+    return `<div class="vreq-card ${isDone ? 'done' : ''} ${isUrgent && !isDone ? 'urgent' : ''}"><div class="vreq-top"><div class="vreq-icon" style="background:${color}22;">${VOL_ICO[r.type] || '🤝'}</div><div class="vreq-info"><div class="vreq-type">${r.type} ${tag}</div><div class="vreq-meta">👤 <strong>${r.name}</strong><br>📍 ${r.address}${r.notes ? '<br>📝 ' + r.notes : ''}</div></div></div><div class="vreq-actions"><a href="tel:${r.phone}" class="vcall-btn">📞 Call ${r.phone}</a><button class="vdone-btn ${isDone ? 'marked' : ''}" onclick="markDone(${r.id},this)">${isDone ? '✅ Helped' : '✅ Mark as Done'}</button><button class="vdel-btn" onclick="deleteReq(${r.id})">🗑️ Remove</button></div><div class="vreq-time">📅 Requested: ${r.time}</div></div>`;
+  }).join('');
+}
+function filterVol(type, el) { document.querySelectorAll('.vfbtn').forEach(b => b.classList.remove('active')); el.classList.add('active'); renderVolBoard(type); }
+function markDone(id, btn) {
+  const done = JSON.parse(localStorage.getItem('sah-done') || '[]');
+  if (!done.includes(id)) { done.push(id); localStorage.setItem('sah-done', JSON.stringify(done)); showToast('✅ Marked as helped! Thank you 🙏'); speakText(T('Thank you for helping! You have made a difference today.', 'సహాయం చేసినందుకు ధన్యవాదాలు!')); }
+  else { const i = done.indexOf(id); done.splice(i, 1); localStorage.setItem('sah-done', JSON.stringify(done)); showToast('Unmarked — request is open again'); }
   renderVolBoard();
 }
-
-function deleteReq(id){
-  let reqs=JSON.parse(localStorage.getItem('sah-reqs')||'[]');
-  reqs=reqs.filter(r=>r.id!==id);
-  localStorage.setItem('sah-reqs',JSON.stringify(reqs));
-  let done=JSON.parse(localStorage.getItem('sah-done')||'[]');
-  done=done.filter(d=>d!==id);
-  localStorage.setItem('sah-done',JSON.stringify(done));
-  renderVolBoard();
-  showToast('Request removed');
+function deleteReq(id) {
+  let reqs = JSON.parse(localStorage.getItem('sah-reqs') || '[]'); reqs = reqs.filter(r => r.id !== id); localStorage.setItem('sah-reqs', JSON.stringify(reqs));
+  let done = JSON.parse(localStorage.getItem('sah-done') || '[]'); done = done.filter(d => d !== id); localStorage.setItem('sah-done', JSON.stringify(done));
+  renderVolBoard(); showToast('Request removed');
 }
 
-/* ---------- MENTAL HEALTH ---------- */
-const MOODS={
-  '😁Great':{h:"You're feeling great! 🌟",t:"Keep this positive energy! Share it with someone who needs it. Write down what made today great and build on it tomorrow."},
-  '😊Good':{h:"Good vibes today! 😊",t:"You're doing well. Channel this energy into a healthy habit — a short walk, journaling, or calling a friend."},
-  '😐Okay':{h:"Just okay? Let's improve that 🌱",t:"Try 5 minutes of deep breathing. Inhale 4 counts, hold 4, exhale 6 counts. Make a warm cup of ginger tea and sit quietly."},
-  '😔Sad':{h:"It's okay to feel sad 💙",t:"Be gentle with yourself. Write 3 things you are grateful for. Call a trusted friend. If sadness persists, speak to a counsellor."},
-  '😰Anxious':{h:"Managing anxiety 🌬️",t:"Try the 5-4-3-2-1 technique: 5 things you see, 4 you can touch, 3 sounds, 2 smells, 1 taste. This brings you to the present moment."},
-  '😡Angry':{h:"Release anger safely 🔥",t:"Take 10 slow deep breaths. Go for a brisk walk. Write your feelings in a journal without holding back, then close it."},
-  '😴Tired':{h:"Your body needs rest 💤",t:"Prioritise 7 to 8 hours of sleep tonight. Limit screens before bed. A 20 minute power nap can restore energy."},
-  '🤒Unwell':{h:"Hope you feel better soon 🌿",t:"Rest is the best medicine. Stay warm, drink fluids, eat light. For fever, severe pain or difficulty breathing, call 108."},
+/* ==================== MENTAL HEALTH ==================== */
+const MOODS = {
+  '😁Great': { h: "You're feeling great! 🌟", t: "Keep this positive energy! Share it with someone who needs it. Write down what made today great and build on it tomorrow." },
+  '😊Good': { h: "Good vibes today! 😊", t: "You're doing well. Channel this energy into a healthy habit — a short walk, journaling, or calling a friend." },
+  '😐Okay': { h: "Just okay? Let's improve that 🌱", t: "Try 5 minutes of deep breathing. Inhale 4 counts, hold 4, exhale 6. Make a warm cup of ginger tea and sit quietly." },
+  '😔Sad': { h: "It's okay to feel sad 💙", t: "Be gentle with yourself. Write 3 things you are grateful for. Call a trusted friend. If sadness persists, speak to a counsellor." },
+  '😰Anxious': { h: "Managing anxiety 🌬️", t: "Try the 5-4-3-2-1 technique: 5 things you see, 4 you can touch, 3 sounds, 2 smells, 1 taste. This brings you to the present moment." },
+  '😡Angry': { h: "Release anger safely 🔥", t: "Take 10 slow deep breaths. Go for a brisk walk. Write your feelings in a journal." },
+  '😴Tired': { h: "Your body needs rest 💤", t: "Prioritise 7 to 8 hours of sleep tonight. Limit screens before bed. A 20 minute power nap can restore energy." },
+  '🤒Unwell': { h: "Hope you feel better soon 🌿", t: "Rest is the best medicine. Stay warm, drink fluids, eat light. For fever or severe pain, call 108." },
 };
-/* Telugu mood messages */
-const MOODS_TE = {
-  '😁Great': {h:'మీరు అద్భుతంగా అనుభవిస్తున్నారు! 🌟', t:'ఈ సానుకూల శక్తిని కొనసాగించండి. మీ సంతోషాన్ని అవసరమైన వారితో పంచుకోండి.'},
-  '😊Good':  {h:'మంచి అనుభూతి! 😊', t:'మీరు బాగున్నారు. ఈ శక్తిని ఆరోగ్యకరమైన అలవాటుగా మార్చుకోండి — నడక, జర్నల్ లేదా స్నేహితుడికి కాల్ చేయండి.'},
-  '😐Okay':  {h:'సాధారణంగా ఉందా? మెరుగు చేద్దాం 🌱', t:'5 నిమిషాల లోతైన శ్వాస తీసుకోవడం ప్రయత్నించండి. అల్లం చాయ్ తాగండి.'},
-  '😔Sad':   {h:'దుఃఖంగా అనిపించడం సహజం 💙', t:'మీ మీద దయగా ఉండండి. కృతజ్ఞతగా 3 విషయాలు రాయండి. నమ్మకమైన స్నేహితుడిని పిలవండి.'},
-  '😰Anxious':{h:'ఆందోళన నిర్వహించడం 🌬️', t:'5-4-3-2-1 పద్ధతి ప్రయత్నించండి: 5 చూసే వస్తువులు, 4 తాకే వస్తువులు, 3 శబ్దాలు, 2 వాసనలు, 1 రుచి.'},
-  '😡Angry': {h:'కోపాన్ని సురక్షితంగా వ్యక్తం చేయండి 🔥', t:'10 నెమ్మదిగా శ్వాసలు తీసుకోండి. వేగంగా నడవండి. మీ భావాలను జర్నల్‌లో రాయండి.'},
-  '😴Tired': {h:'మీ శరీరానికి విశ్రాంతి అవసరం 💤', t:'ఈ రాత్రి 7 నుండి 8 గంటల నిద్రకు ప్రాధాన్యత ఇవ్వండి. నిద్రకు ముందు స్క్రీన్‌లు తగ్గించండి.'},
-  '🤒Unwell':{h:'త్వరగా కోలుకోవాలని కోరుకుంటున్నాం 🌿', t:'విశ్రాంతి అత్యుత్తమ మందు. వేడి నీళ్ళు తాగండి, తేలికైన ఆహారం తినండి. జ్వరం, తీవ్రమైన నొప్పి ఉంటే 108 కి కాల్ చేయండి.'},
-};
-function selMood(el,e,l){
-  document.querySelectorAll('.moodbtn').forEach(b=>b.classList.remove('active'));el.classList.add('active');
-  const key = e+l;
-  const m = MOODS[key] || {h:'Thank you for sharing 💜', t:'Whatever you are feeling is valid. Be kind to yourself today.'};
-  const mte = MOODS_TE[key] || {h:'మీతో పంచుకున్నందుకు ధన్యవాదాలు 💜', t:'మీరు ఏ విధంగా అనుభవించినా అది చెల్లుబాటు అవుతుంది. ఈరోజు మీ పట్ల దయగా ఉండండి.'};
-  const display = lang==='te' ? mte : m;
-  menTipText = display.h + '. ' + display.t;
-  document.getElementById('mtip').innerHTML=`<h3>💜 ${display.h}</h3><p>${display.t}</p>`;
+function selMood(el, e, l) {
+  document.querySelectorAll('.moodbtn').forEach(b => b.classList.remove('active')); el.classList.add('active');
+  const key = e + l;
+  const m = MOODS[key] || { h: 'Thank you for sharing 💜', t: "Whatever you're feeling is valid. Be kind to yourself today." };
+  menTipText = m.h + '. ' + m.t;
+  document.getElementById('mtip').innerHTML = `<h3>💜 ${m.h}</h3><p>${m.t}</p>`;
   speakText(menTipText);
 }
-function speakMenTip(){menTipText?speakText(menTipText):speakText(T('Please select your mood above first.','దయచేసి పైన మీ మూడ్‌ని ఎంచుకోండి.'));}
-const EX={
-  breath:`<div class="mtip"><h3>🌬️ 4-7-8 Breathing</h3><p>Inhale through nose for <b>4 counts</b>. Hold for <b>7 counts</b>. Exhale through mouth for <b>8 counts</b>. Repeat 4 times. This calms anxiety within minutes.</p><button class="spk" style="margin-top:9px" onclick="speakText('Breathing exercise. Inhale for 4 counts. Hold for 7 counts. Exhale for 8 counts. Repeat 4 times.')">🔊 Guide Me</button></div>`,
-  ground:`<div class="mtip"><h3>🌱 5-4-3-2-1 Grounding</h3><p>Name <b>5 things you see</b>. <b>4 you can touch</b>. <b>3 sounds</b> you hear. <b>2 things you smell</b>. <b>1 thing you taste</b>. Brings you to the present moment.</p><button class="spk" style="margin-top:9px" onclick="speakText('Grounding exercise. Name 5 things you can see. 4 things you can touch. 3 sounds you hear. 2 smells. 1 taste.')">🔊 Guide Me</button></div>`,
-  affirm:`<div class="mtip"><h3>✨ Affirmations</h3><p>Say 3 times: <em>"I am enough. I am doing my best. I am worthy of love. This too shall pass. I have overcome before and I will again."</em></p><button class="spk" style="margin-top:9px" onclick="speakText('I am enough. I am doing my best. I am worthy of love and care. This too shall pass. I have overcome difficulties before and I will do it again.')">🔊 Read Aloud</button></div>`,
+function speakMenTip() { menTipText ? speakText(menTipText) : speakText(T('Please select your mood above first.', 'దయచేసి పైన మీ మూడ్‌ని ఎంచుకోండి.')); }
+const EX = {
+  breath: `<div class="mtip"><h3>🌬️ 4-7-8 Breathing</h3><p>Inhale through nose for <b>4 counts</b>. Hold for <b>7 counts</b>. Exhale through mouth for <b>8 counts</b>. Repeat 4 times. This calms anxiety within minutes.</p><button class="spk" style="margin-top:9px" onclick="speakText('Breathing exercise. Inhale for 4 counts. Hold for 7 counts. Exhale for 8 counts. Repeat 4 times.')">🔊 Guide Me</button></div>`,
+  ground: `<div class="mtip"><h3>🌱 5-4-3-2-1 Grounding</h3><p>Name <b>5 things you see</b>. <b>4 you can touch</b>. <b>3 sounds</b> you hear. <b>2 things you smell</b>. <b>1 thing you taste</b>. Brings you to the present moment.</p><button class="spk" style="margin-top:9px" onclick="speakText('Grounding exercise. Name 5 things you can see. 4 you can touch. 3 sounds. 2 smells. 1 taste.')">🔊 Guide Me</button></div>`,
+  affirm: `<div class="mtip"><h3>✨ Affirmations</h3><p>Say 3 times: <em>"I am enough. I am doing my best. I am worthy of love. This too shall pass. I have overcome before and I will again."</em></p><button class="spk" style="margin-top:9px" onclick="speakText('I am enough. I am doing my best. I am worthy of love and care. This too shall pass. I have overcome before and I will again.')">🔊 Read Aloud</button></div>`,
 };
-function showEx(k){document.getElementById('exres').innerHTML=EX[k];}
+function showEx(k) { document.getElementById('exres').innerHTML = EX[k]; }
 
-/* ---------- EMERGENCY FIRST AID ---------- */
-function speakFirstAid(){
-  speakText(T('Heart Attack: Call 108 immediately. Loosen clothing. Give aspirin if not allergic. Choking: 5 back blows then 5 abdominal thrusts. Bleeding: Firm pressure with clean cloth. Elevate wound. Burns: Cool water 10 minutes. No ice or oil.','గుండె పోటు: వెంటనే 108 కి కాల్ చేయండి. దుస్తులు వదులు చేయండి. అలెర్జీ లేకపోతే ఆస్పిరిన్ ఇవ్వండి. ఉక్కిరిబిక్కిరి: వీపుపై 5 దెబ్బలు వేయండి. రక్తస్రావం: శుభ్రమైన గుడ్డతో గట్టిగా నొక్కండి. కాలిన గాయాలు: 10 నిమిషాలు చల్లటి నీటితో చల్లార్చండి.'));
+/* ==================== FIRST AID ==================== */
+function speakFirstAid() {
+  speakText(T('Heart Attack: Call 108 immediately. Loosen clothing. Give aspirin if not allergic. Choking: 5 back blows then 5 abdominal thrusts. Bleeding: Firm pressure with clean cloth. Elevate wound. Burns: Cool water 10 minutes. No ice or oil.',
+    'గుండె పోటు: వెంటనే 108 కి కాల్ చేయండి. ఉక్కిరిబిక్కిరి: వీపుపై 5 దెబ్బలు వేయండి. రక్తస్రావం: శుభ్రమైన గుడ్డతో నొక్కండి. కాలిన గాయాలు: 10 నిమిషాలు చల్లటి నీటితో చల్లార్చండి.'));
 }
 
-/* ---------- DIARY ---------- */
-let dMood='😊';
-function setDMood(el,m){dMood=m;document.getElementById('dmood').value=m;document.querySelectorAll('[onclick^="setDMood"]').forEach(e=>e.style.filter='grayscale(1)');el.style.filter='none';}
-function saveD(){
-  const t=document.getElementById('dtxt').value.trim();
-  if(!t){showToast('Please write something first');return;}
-  const e=JSON.parse(localStorage.getItem('health-diary')||'[]');
-  e.unshift({t,mood:dMood,date:new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'})});
-  localStorage.setItem('health-diary',JSON.stringify(e.slice(0,50)));
-  document.getElementById('dtxt').value='';
+/* ==================== DIARY ==================== */
+let dMood = '😊';
+function setDMood(el, m) { dMood = m; document.getElementById('dmood').value = m; document.querySelectorAll('[onclick^="setDMood"]').forEach(e => e.style.filter = 'grayscale(1)'); el.style.filter = 'none'; }
+function saveD() {
+  const t = document.getElementById('dtxt').value.trim();
+  if (!t) { showToast('Please write something first'); return; }
+  const e = JSON.parse(localStorage.getItem('health-diary') || '[]');
+  e.unshift({ t, mood: dMood, date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }) });
+  localStorage.setItem('health-diary', JSON.stringify(e.slice(0, 50)));
+  document.getElementById('dtxt').value = '';
   showToast('✅ Diary entry saved!');
-  speakText(T('Your health diary entry has been saved.','మీ ఆరోగ్య డైరీ నమోదు సేవ్ చేయబడింది.'));
+  speakText(T('Your health diary entry has been saved.', 'మీ ఆరోగ్య డైరీ నమోదు సేవ్ చేయబడింది.'));
   loadD();
 }
-function loadD(){
-  const e=JSON.parse(localStorage.getItem('health-diary')||'[]');
-  const b=document.getElementById('dentries');
-  if(!e.length){b.innerHTML='<p style="color:var(--text-soft);font-size:13px;">No entries yet. Start your health journal today!</p>';return;}
-  b.innerHTML=e.map(x=>`<div class="dentry"><div class="ddate">📅 ${x.date} <span class="dmood">${x.mood}</span></div><div class="dtxt">${x.t}</div></div>`).join('');
+function loadD() {
+  const e = JSON.parse(localStorage.getItem('health-diary') || '[]');
+  const b = document.getElementById('dentries');
+  if (!e.length) { b.innerHTML = '<p style="color:var(--text-soft);font-size:13px;">No entries yet. Start your health journal today!</p>'; return; }
+  b.innerHTML = e.map(x => `<div class="dentry"><div class="ddate">📅 ${x.date} <span class="dmood">${x.mood}</span></div><div class="dtxt">${x.t}</div></div>`).join('');
 }
 
-/* ---------- TOAST ---------- */
-function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200);}
+/* ==================== TOAST ==================== */
+function showToast(m) { const t = document.getElementById('toast'); t.textContent = m; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3200); }
 
-// Init volunteer badge on load
-setTimeout(()=>renderVolBoard(), 300);
-
-// Pre-load voices — critical for Chrome which loads them async
-if('speechSynthesis' in window){
-  // Force load
+/* ==================== INIT ==================== */
+setTimeout(() => renderVolBoard(), 300);
+if ('speechSynthesis' in window) {
   window.speechSynthesis.getVoices();
   window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-  // Some browsers need a tiny delay
   setTimeout(() => window.speechSynthesis.getVoices(), 500);
 }
 </script>
